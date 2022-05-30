@@ -14,10 +14,10 @@
 
 .footer {
   display: flex;
-  flex: 1;
+  /* flex: 1; */
   padding: 2rem 0;
   border-top: 1px solid #eaeaea;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -25,7 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
+  /* flex-grow: 1; */
 }
 
 .title a {
@@ -88,8 +88,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: #42a476;
+  border-color: #42a476;
 }
 
 .card h2 {
