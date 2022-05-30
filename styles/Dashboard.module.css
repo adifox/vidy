@@ -22,7 +22,7 @@
   color: '#B3B3B3';
 }
 .headerContainer button {
-  background-color: #14b74b;
+  background-color: #1da079;
 }
 .navBar {
   display: flex;
@@ -35,6 +35,47 @@
   height: 100%;
   padding: 20px 0;
   background-color: #0f5b47;
+}
+.navBarIconContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 170px);
+  width: 100%;
+  margin-top: 54px;
+  color: #fff;
+}
+.navBarIconContainer svg {
+  color: #fff;
+  height: 20px;
+}
+.navBarIconContainer ul {
+  padding: 0;
+  margin: 0;
+}
+.navBarIconContainer li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.iconWrapper {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  background-color: #0b4435;
+  border-left-width: 5px;
+  border-left-color: #1da079;
+  border-left-style: solid;
+}
+.iconWrapper:hover {
+  background-color: #0b4435;
+}
+.iconTextStyles {
+  font-size: 11px;
+  line-height: 12px;
+  margin-top: 10px;
+  text-align: center;
 }
 .contentContainer {
   min-height: 100vh;
