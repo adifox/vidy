@@ -1,0 +1,23 @@
+.iconWrapper {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  /* background-color: #0b4435; */
+  background-color: #293241;
+  border-left-width: 5px;
+  /* border-left-color: #1da079; */
+  border-left-color: #98c1d9;
+  border-left-style: solid;
+}
+.iconWrapper:hover {
+  /* background-color: #1da079; */
+  background-color: #98c1d9;
+}
+.iconTextStyles {
+  font-size: 11px;
+  line-height: 12px;
+  margin-top: 10px;
+  text-align: center;
+}

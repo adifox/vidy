@@ -2,20 +2,13 @@ import styles from './Button.module.css'
 
 const { buttonStyles } = styles
 
-export const Button = ({ text, color, styling }) => {
+export const Button = ({ text, color, className, onClick }) => {
+  let buttonStyling = buttonStyles
+  if (className) {
+    buttonStyling = `${buttonStyles} ${className}`
+  }
   return (
-    <button
-      type='button'
-      // style={{
-      //   padding: '10px',
-      //   borderRadius: '10px',
-      //   color: '#fff',
-      //   border: 'none',
-      //   letterSpacing: '1px',
-      //   fontSize: '16px',
-      // }}
-      className={buttonStyles}
-    >
+    <button type='button' className={buttonStyling} onClick={onClick}>
       {text}
     </button>
   )

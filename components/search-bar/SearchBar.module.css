@@ -1,0 +1,38 @@
+.searchBar {
+  margin-left: 20px;
+  border: none;
+  background-color: #eeeeee;
+  padding: 10px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-style: italic;
+  /* width: 400px; */
+  /* color: #b3b3b3; */
+}
+.searchBar svg {
+  margin-right: 10px;
+  margin-left: 10px;
+  color: #b3b3b3;
+}
+.searchBarInput {
+  /* margin-left: 10px; */
+  border: none;
+  background-color: #eeeeee;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-style: italic;
+  min-width: 50vw;
+  /* color: #b3b3b3; */
+}
+.searchBarInput:focus {
+  background-color: #fff;
+  font-style: normal;
+}
+.searchBarInput::placeholder {
+  color: #b3b3b3;
+}
+.magnifyingGlassButton {
+  border: none;
+  background-color: transparent;
+}

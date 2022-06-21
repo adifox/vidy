@@ -1,8 +1,9 @@
 .buttonStyles {
-  padding: 10px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 10px;
+  border-radius: 20px;
   color: #fff;
   font-size: 16px;
   letter-spacing: 1px;
+  cursor: pointer;
 }
