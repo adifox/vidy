@@ -28,15 +28,20 @@
 .dashboardGreenButton {
   /* background-color: #0f5b47; */
   background-color: #3d5a80;
+  /* background-color: #293241; */
+  /* background-color: #ee6c4d; */
+  /* background-color: #98c1d9; */
 }
 .videoButton,
 .audioButton,
 .videoPlusButton {
   /* background-color: #9b1d1d; */
   /* background-image: linear-gradient(to right, #0f5b47, #9b1d1d); */
+  /* background-color: #98c1d9; */
   /* background-color: #3d5a80; */
+  background-color: #ee6c4d;
   /* background-color: #276a5d; */
-  background-color: #293241;
+  /* background-color: #293241; */
   /* -webkit-transition: box-shadow 0.5s, background 0.5s;
   -moz-transition: box-shadow 0.5s, background 0.5s;
   transition: box-shadow 0.5s, background 0.5s; */

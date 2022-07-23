@@ -84,7 +84,7 @@ export default function Dashboard() {
           <Link href='/'>
             <a>
               <Image
-                src='/Images/vidy-logo.png'
+                src='/Images/logo_blanco.png'
                 alt='Vidy Logo'
                 width={50}
                 height={50}
@@ -113,8 +113,6 @@ export default function Dashboard() {
         </div>
         <div className={dashboard}>
           <div className={videoCardsContainer}>
-            Organizar contenido aqui segun proyectos // Con los últimos videos
-            añadidos según su proyecto
             <EmptyAreaInfo
               icon={faVideoSlash}
               text='Click "New Video" and record your first Video'

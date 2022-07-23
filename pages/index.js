@@ -18,7 +18,7 @@ export default function Home() {
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <h1 className={styles.title}>Welcome to </h1>
           <Image
-            src='/Images/vidy-logo.png'
+            src='/Images/logo_color.png'
             alt='Vidy Logo'
             width={72}
             height={72}
@@ -72,7 +72,7 @@ export default function Home() {
         </a>
         {/* <span className={styles.logo}> */}
         <Image
-          src='/Images/vidy-logo.png'
+          src='/Images/logo_color.png'
           alt='Vidy Logo'
           width={72}
           height={72}
