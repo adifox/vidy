@@ -1,18 +1,11 @@
-import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import styles from './NavbarButton.module.css'
+import { iconWrapper, iconTextStyles } from './NavbarButton.module.css'
 
-const { iconWrapper, iconTextStyles } = styles
-
-export const NavbarButton = ({ text, href, icon }) => {
+export const NavbarButton = ({ text, onClick, icon }) => {
   return (
-    <Link href={href}>
-      <a>
-        <div className={iconWrapper}>
-          <FontAwesomeIcon icon={icon} />
-          <span className={iconTextStyles}>{text}</span>
-        </div>
-      </a>
-    </Link>
+    <button className={iconWrapper} onClick={onClick}>
+      <FontAwesomeIcon icon={icon} />
+      <span className={iconTextStyles}>{text}</span>
+    </button>
   )
 }

@@ -1,18 +1,17 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { faVideoSlash } from '@fortawesome/free-solid-svg-icons/faVideoSlash'
 import { faHouseChimneyUser } from '@fortawesome/free-solid-svg-icons/faHouseChimneyUser'
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons/faArrowRightFromBracket'
 import { faPhotoFilm } from '@fortawesome/free-solid-svg-icons/faPhotoFilm'
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons/faTrashCan'
 import { faFolderClosed } from '@fortawesome/free-solid-svg-icons/faFolderClosed'
-import { faUserAltSlash } from '@fortawesome/free-solid-svg-icons/faUserAltSlash'
 import { Button } from '../../components/button'
 import { SearchBar } from '../../components/search-bar'
 import { NavbarButton } from '../../components/nav-bar-button'
-import { EmptyAreaInfo } from '../../components/empty-area-info'
 import { Modal } from '../../components/modal'
+import { HomeContentContainer } from '../../components/home-content-container'
+import { HomeVideoContainer } from '../../components/home-video-container'
 import styles from '../../styles/Dashboard.module.css'
 
 const {
@@ -21,14 +20,14 @@ const {
   navBar,
   contentContainer,
   dashboard,
-  videoCardsContainer,
-  rightSideBar,
   navBarIconContainer,
   dashboardGreenButton,
   dashboardButtonLine,
   videoButton,
   audioButton,
   videoPlusButton,
+  fullSize,
+  splittedElements,
 } = styles
 
 const NAVBAR_DATA = [
@@ -61,10 +60,44 @@ const NAVBAR_DATA = [
 
 export default function Dashboard() {
   const [openModal, setOpenModal] = useState(false)
+  const [homeContainer, setHomeContainer] = useState(true)
+  const [videoContainer, setVideoContainer] = useState(false)
+  const [projectsContainer, setProjectsContainer] = useState(false)
+  const [binContainer, setBinContainer] = useState(false)
 
   const newVideoHandler = () => {
     console.log('POP UP')
     setOpenModal(true)
+  }
+
+  const handleOnclick = (button) => {
+    console.log('CLICK:', button)
+    switch (button) {
+      case 'All Videos':
+        setHomeContainer(false)
+        setVideoContainer(true)
+        setProjectsContainer(false)
+        setBinContainer(false)
+        break
+      case 'Projects':
+        setHomeContainer(false)
+        setVideoContainer(false)
+        setProjectsContainer(true)
+        setBinContainer(false)
+        break
+      case 'Removed Videos':
+        setHomeContainer(false)
+        setVideoContainer(false)
+        setProjectsContainer(false)
+        setBinContainer(true)
+        break
+      default:
+        setHomeContainer(true)
+        setVideoContainer(false)
+        setProjectsContainer(false)
+        setBinContainer(false)
+        break
+    }
   }
 
   return (
@@ -96,7 +129,10 @@ export default function Dashboard() {
           <ul>
             {NAVBAR_DATA.map((component, index) => (
               <li key={index}>
-                <NavbarButton {...component} />
+                <NavbarButton
+                  {...component}
+                  onClick={() => handleOnclick(component.text)}
+                />
               </li>
             ))}
           </ul>
@@ -111,19 +147,9 @@ export default function Dashboard() {
             className={videoPlusButton}
           />
         </div>
-        <div className={dashboard}>
-          <div className={videoCardsContainer}>
-            <EmptyAreaInfo
-              icon={faVideoSlash}
-              text='Click "New Video" and record your first Video'
-            />
-          </div>
-          <div className={rightSideBar}>
-            <EmptyAreaInfo
-              icon={faUserAltSlash}
-              text='Your personal data is empty'
-            />
-          </div>
+        <div className={homeContainer ? splittedElements : fullSize}>
+          {homeContainer && <HomeContentContainer />}
+          {videoContainer && <HomeVideoContainer />}
         </div>
       </div>
       {openModal && <Modal onClick={() => setOpenModal(false)} />}
