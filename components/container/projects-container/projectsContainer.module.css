@@ -1,0 +1,17 @@
+.projectCardsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px #0003;
+}
+.projectCardsContainer p {
+  color: #808080;
+  margin-top: 10px;
+}
+.projectCardsContainer svg {
+  height: 50px;
+  opacity: 0.5;
+}

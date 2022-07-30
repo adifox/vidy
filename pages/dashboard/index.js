@@ -10,8 +10,10 @@ import { Button } from '../../components/button'
 import { SearchBar } from '../../components/search-bar'
 import { NavbarButton } from '../../components/nav-bar-button'
 import { Modal } from '../../components/modal'
-import { HomeContentContainer } from '../../components/home-content-container'
-import { HomeVideoContainer } from '../../components/home-video-container'
+import { ContentContainer } from '../../components/container/content-container'
+import { VideoContainer } from '../../components/container/video-container'
+import { ProjectsContainer } from '../../components/container/projects-container'
+import { BinContainer } from '../../components/container/bin-container'
 import styles from '../../styles/Dashboard.module.css'
 
 const {
@@ -64,14 +66,17 @@ export default function Dashboard() {
   const [videoContainer, setVideoContainer] = useState(false)
   const [projectsContainer, setProjectsContainer] = useState(false)
   const [binContainer, setBinContainer] = useState(false)
+  const [buttonIndex, setButtonIndex] = useState(1)
 
   const newVideoHandler = () => {
     console.log('POP UP')
     setOpenModal(true)
   }
 
-  const handleOnclick = (button) => {
-    console.log('CLICK:', button)
+  const handleOnclick = (button, index) => {
+    console.log('CLICK:', index)
+    console.log('CLICK - Element:', buttonIndex)
+    setButtonIndex(index)
     switch (button) {
       case 'All Videos':
         setHomeContainer(false)
@@ -86,6 +91,12 @@ export default function Dashboard() {
         setBinContainer(false)
         break
       case 'Removed Videos':
+        setHomeContainer(false)
+        setVideoContainer(false)
+        setProjectsContainer(false)
+        setBinContainer(true)
+        break
+      case 'Logout':
         setHomeContainer(false)
         setVideoContainer(false)
         setProjectsContainer(false)
@@ -131,7 +142,8 @@ export default function Dashboard() {
               <li key={index}>
                 <NavbarButton
                   {...component}
-                  onClick={() => handleOnclick(component.text)}
+                  active={index === buttonIndex}
+                  onClick={() => handleOnclick(component.text, index)}
                 />
               </li>
             ))}
@@ -148,8 +160,10 @@ export default function Dashboard() {
           />
         </div>
         <div className={homeContainer ? splittedElements : fullSize}>
-          {homeContainer && <HomeContentContainer />}
-          {videoContainer && <HomeVideoContainer />}
+          {homeContainer && <ContentContainer />}
+          {videoContainer && <VideoContainer />}
+          {projectsContainer && <ProjectsContainer />}
+          {binContainer && <BinContainer />}
         </div>
       </div>
       {openModal && <Modal onClick={() => setOpenModal(false)} />}
