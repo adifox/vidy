@@ -6,7 +6,6 @@ import {
 } from './NavbarButton.module.css'
 
 export const NavbarButton = ({ text, onClick, icon, active }) => {
-  console.log('THE Button:', text, active)
   return (
     <button className={active ? activeButton : iconWrapper} onClick={onClick}>
       <FontAwesomeIcon icon={icon} />

@@ -10,9 +10,10 @@
   align-items: center;
 }
 .modalContainer {
+  position: relative;
   width: 90vw;
   height: 80vh;
-  background-color: #fff;
+  background-color: #f9f9f9;
   border-radius: 5px;
 }
 .modalHeader {
@@ -37,4 +38,19 @@
   height: 16px;
   width: 16px;
   color: #98c1d9;
+}
+.contentWrapperStyles {
+  display: flex;
+  padding: 0 24px;
+}
+.modalFooterStyles {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0 8px 8px 0;
+}
+.modalSecondaryCloseButton {
+  background-color: #ee6c4d;
 }

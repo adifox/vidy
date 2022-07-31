@@ -1,17 +1,29 @@
 .projectCardsContainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 4px #0003;
+  padding: 24px;
 }
-.projectCardsContainer p {
+.emptyContainerStyles {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px #0003;
+  padding: 24px;
+}
+.emptyContainerStyles p {
   color: #808080;
   margin-top: 10px;
 }
-.projectCardsContainer svg {
+.emptyContainerStyles svg {
   height: 50px;
   opacity: 0.5;
+}
+.cardWrapperStyles {
+  margin-top: 24px;
 }

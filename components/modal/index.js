@@ -1,20 +1,33 @@
 import { Button } from '../button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClose } from '@fortawesome/free-solid-svg-icons/faClose'
-import styles from './Modal.module.css'
+import {
+  modalWrapperStyles,
+  modalContainer,
+  modalHeader,
+  modalCloseButton,
+  contentWrapperStyles,
+  modalFooterStyles,
+  modalSecondaryCloseButton,
+} from './Modal.module.css'
 
-const { modalWrapperStyles, modalContainer, modalHeader, modalCloseButton } =
-  styles
-
-export const Modal = ({ onClick }) => {
+export const Modal = ({ onClick, children }) => {
   return (
     <div className={modalWrapperStyles}>
       <div className={modalContainer}>
-        <div className={modalHeader}>
+        {/* <div className={modalHeader}>
           <Button
             onClick={onClick}
             className={modalCloseButton}
             text={<FontAwesomeIcon icon={faClose} />}
+          />
+        </div> */}
+        <div className={contentWrapperStyles}>{children}</div>
+        <div className={modalFooterStyles}>
+          <Button
+            onClick={onClick}
+            className={modalSecondaryCloseButton}
+            text='Done'
           />
         </div>
       </div>

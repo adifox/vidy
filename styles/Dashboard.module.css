@@ -25,13 +25,21 @@
 .dashboardButtonLine button {
   margin-right: 20px;
 }
-.dashboardGreenButton {
+.newProjectButton {
   /* background-color: #0f5b47; */
   /* background-color: #3d5a80; */
-  background-color: #13ae47;
+  /* background-color: #13ae47; */
+  background-color: #14ad84;
+  transition: all 0.3s;
   /* background-color: #293241; */
   /* background-color: #ee6c4d; */
   /* background-color: #98c1d9; */
+}
+.newProjectButton:active {
+  transform: scale(0.98);
+}
+.newProjectButton:hover {
+  background-color: #149e77;
 }
 .videoButton,
 .audioButton,
@@ -41,7 +49,8 @@
   /* background-color: #98c1d9; */
   /* background-color: #3d5a80; */
   /* background-color: #ee6c4d; */
-  background-color: #8850dc;
+  /* background-color: #8850dc; */
+  background-color: #7151db;
   /* background-color: #276a5d; */
   /* background-color: #293241; */
   /* -webkit-transition: box-shadow 0.5s, background 0.5s;
@@ -56,7 +65,8 @@
   -webkit-transition: box-shadow 0.5s;
   -moz-transition: box-shadow 0.5s;
   transition: box-shadow 0.5s; */
-  transform: scale(1.03);
+  /* transform: scale(1.03); */
+  background-color: #5f43c1;
 }
 .videoButton:active,
 .audioButton:active,

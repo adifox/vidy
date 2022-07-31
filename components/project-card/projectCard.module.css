@@ -1,0 +1,30 @@
+.wrapperStyles {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #efefef;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.cardHeader {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 4px 4px 4px 16px;
+  background-color: red;
+  color: #fff;
+}
+.cardHeader h4 {
+  margin: 0;
+}
+.cardBodyStyles {
+  display: flex;
+  flex-direction: column;
+}
+.cardContent {
+  display: flex;
+  min-height: 80px;
+}
+.cardFooterStyles {
+  display: flex;
+  padding: 4px 4px 4px 16px;
+  background-color: #efefef;
+}

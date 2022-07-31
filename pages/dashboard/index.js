@@ -14,6 +14,7 @@ import { ContentContainer } from '../../components/container/content-container'
 import { VideoContainer } from '../../components/container/video-container'
 import { ProjectsContainer } from '../../components/container/projects-container'
 import { BinContainer } from '../../components/container/bin-container'
+import { ProjectForm } from '../../components/proyect-form'
 import styles from '../../styles/Dashboard.module.css'
 
 const {
@@ -23,7 +24,7 @@ const {
   contentContainer,
   dashboard,
   navBarIconContainer,
-  dashboardGreenButton,
+  newProjectButton,
   dashboardButtonLine,
   videoButton,
   audioButton,
@@ -66,7 +67,8 @@ export default function Dashboard() {
   const [videoContainer, setVideoContainer] = useState(false)
   const [projectsContainer, setProjectsContainer] = useState(false)
   const [binContainer, setBinContainer] = useState(false)
-  const [buttonIndex, setButtonIndex] = useState(1)
+  const [buttonIndex, setButtonIndex] = useState(0)
+  const [createdProjects, setCreatedProjects] = useState([])
 
   const newVideoHandler = () => {
     console.log('POP UP')
@@ -117,7 +119,7 @@ export default function Dashboard() {
         <div className={headerContainer}>
           <Button
             text='New Project'
-            className={dashboardGreenButton}
+            className={newProjectButton}
             onClick={newVideoHandler}
           />
           <SearchBar />
@@ -162,11 +164,20 @@ export default function Dashboard() {
         <div className={homeContainer ? splittedElements : fullSize}>
           {homeContainer && <ContentContainer />}
           {videoContainer && <VideoContainer />}
-          {projectsContainer && <ProjectsContainer />}
+          {projectsContainer && (
+            <ProjectsContainer projects={createdProjects} />
+          )}
           {binContainer && <BinContainer />}
         </div>
       </div>
-      {openModal && <Modal onClick={() => setOpenModal(false)} />}
+      {openModal && (
+        <Modal onClick={() => setOpenModal(false)}>
+          <ProjectForm
+            addProject={setCreatedProjects}
+            projects={createdProjects}
+          />
+        </Modal>
+      )}
     </div>
   )
 }
