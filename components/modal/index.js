@@ -15,13 +15,6 @@ export const Modal = ({ onClick, children }) => {
   return (
     <div className={modalWrapperStyles}>
       <div className={modalContainer}>
-        {/* <div className={modalHeader}>
-          <Button
-            onClick={onClick}
-            className={modalCloseButton}
-            text={<FontAwesomeIcon icon={faClose} />}
-          />
-        </div> */}
         <div className={contentWrapperStyles}>{children}</div>
         <div className={modalFooterStyles}>
           <Button
