@@ -6,14 +6,16 @@ import {
   rightSideBar,
 } from './contentContainer.module.css'
 
-export const ContentContainer = () => {
+export const ContentContainer = ({ children }) => {
   return (
     <>
       <div className={videoCardsContainer}>
-        <EmptyAreaInfo
-          icon={faVideoSlash}
-          text='Click "New Video" and record your first Video.'
-        />
+        {children ?? (
+          <EmptyAreaInfo
+            icon={faVideoSlash}
+            text='Click "New Video" and record your first Video.'
+          />
+        )}
       </div>
       <div className={rightSideBar}>
         <EmptyAreaInfo

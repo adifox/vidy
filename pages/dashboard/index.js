@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import { faHouseChimneyUser } from '@fortawesome/free-solid-svg-icons/faHouseChimneyUser'
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons/faArrowRightFromBracket'
 import { faPhotoFilm } from '@fortawesome/free-solid-svg-icons/faPhotoFilm'
@@ -15,6 +16,15 @@ import { VideoContainer } from '../../components/container/video-container'
 import { ProjectsContainer } from '../../components/container/projects-container'
 import { BinContainer } from '../../components/container/bin-container'
 import { ProjectForm } from '../../components/proyect-form'
+const VideoRecorder = dynamic(
+  () => {
+    return import('../../components/video')
+  },
+  {
+    ssr: false,
+  }
+)
+
 import styles from '../../styles/Dashboard.module.css'
 
 const {
@@ -67,12 +77,19 @@ export default function Dashboard() {
   const [videoContainer, setVideoContainer] = useState(false)
   const [projectsContainer, setProjectsContainer] = useState(false)
   const [binContainer, setBinContainer] = useState(false)
+  const [videoRecorder, setVideoRecorder] = useState(false)
   const [buttonIndex, setButtonIndex] = useState(0)
   const [createdProjects, setCreatedProjects] = useState([])
+
+  const handleNewProject = () => {
+    setOpenModal(true)
+    setVideoRecorder(false)
+  }
 
   const newVideoHandler = () => {
     console.log('POP UP')
     setOpenModal(true)
+    setVideoRecorder(true)
   }
 
   const handleOnclick = (button, index) => {
@@ -120,7 +137,7 @@ export default function Dashboard() {
           <Button
             text='New Project'
             className={newProjectButton}
-            onClick={newVideoHandler}
+            onClick={handleNewProject}
           />
           <SearchBar />
         </div>
@@ -154,7 +171,11 @@ export default function Dashboard() {
       </div>
       <div className={contentContainer}>
         <div className={dashboardButtonLine}>
-          <Button text='New Video' className={videoButton} />
+          <Button
+            text='New Video'
+            className={videoButton}
+            onClick={newVideoHandler}
+          />
           <Button text='New Audio' className={audioButton} />
           <Button
             text='New Video with shared Screen'
@@ -172,10 +193,14 @@ export default function Dashboard() {
       </div>
       {openModal && (
         <Modal onClick={() => setOpenModal(false)}>
-          <ProjectForm
-            addProject={setCreatedProjects}
-            projects={createdProjects}
-          />
+          {!videoRecorder ? (
+            <ProjectForm
+              addProject={setCreatedProjects}
+              projects={createdProjects}
+            />
+          ) : (
+            <VideoRecorder />
+          )}
         </Modal>
       )}
     </div>
