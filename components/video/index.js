@@ -1,4 +1,5 @@
-import { useRef, useEffect } from 'react'
+import axios from 'axios'
+import { useRef, useEffect, useState } from 'react'
 import { ReactMediaRecorder } from 'react-media-recorder'
 import { Button } from '../button'
 
@@ -11,20 +12,53 @@ const VideoPreview = ({ stream }) => {
     }
   }, [stream])
 
-  return <video ref={videoRef} width={500} heigt={500} autoPlay controls />
+  return <video ref={videoRef} width={500} heigt={500} autoPlay />
 }
 
 export default function VideoRecorder() {
-  // const { status, startRecording, stopRecording, mediaBlobUrl } =
-  //   useReactMediaRecorder({ video: true })
+  const [file, setFile] = useState()
 
-  const facingMode = 'user'
-  const constraints = {
-    audio: false,
-    video: {
-      facingMode,
-    },
+  const fileHandler = (blobUrl, blob) => {
+    blob.lastModified = new Date()
+    console.log('THE BLOB - ADDED META DATA:', blob)
+
+    const myVideFile = new File([blob], 'createdVideo.mp4', { type: blob.type })
+    setFile(myVideFile)
+    console.log('THE VIDEO FILE:', myVideFile)
   }
+
+  const handleSaveFile = async () => {
+    console.log('THE FIEL TO SEND:', file)
+    const formData = new FormData()
+    // formData.append('title', 'mySuperVideo')
+    formData.append('file', file, file.name)
+
+    console.log('THE HEDERS?????', formData)
+
+    try {
+      // const response = await axios({
+      //   method: 'post',
+      //   url: '/api/hello',
+      //   data: formData,
+      //   headers: { 'Content-Type': 'multipart/form-data' },
+      // })
+      const response = await axios.post('/api/hello', formData, {
+        headers: { 'content-type': 'multipart/form-data' },
+      })
+
+      console.log(' FILE UPLOAD RESPONSE:', response)
+    } catch (error) {
+      console.log('FILE UPLOAD ERROR:', error)
+    }
+  }
+
+  // const facingMode = 'user'
+  // const constraints = {
+  //   audio: false,
+  //   video: {
+  //     facingMode,
+  //   },
+  // }
 
   // let videoStream = null
   // navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
@@ -37,6 +71,7 @@ export default function VideoRecorder() {
       <h2>The video Recorder</h2>
       <ReactMediaRecorder
         video
+        onStop={fileHandler}
         render={({
           status,
           startRecording,
@@ -63,6 +98,7 @@ export default function VideoRecorder() {
           </div>
         )}
       />
+      <Button onClick={handleSaveFile}>Save Video</Button>
     </div>
   )
 }
