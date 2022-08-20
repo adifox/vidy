@@ -7,7 +7,7 @@ const { searchBar, searchBarInput, magnifyingGlassButton } = styles
 export const SearchBar = () => {
   return (
     <div className={searchBar}>
-      <input placeholder='Search Videos' className={searchBarInput} />
+      <input placeholder='Search' className={searchBarInput} />
       <button className={magnifyingGlassButton}>
         <FontAwesomeIcon icon={faMagnifyingGlass} />
       </button>

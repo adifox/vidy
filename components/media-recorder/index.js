@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { useRef, useEffect, useState } from 'react'
-import { ReactMediaRecorder } from 'react-media-recorder'
+import { ReactMediaRecorder, useReactMediaRecorder } from 'react-media-recorder'
+// import VideoRecorder from 'react-video-recorder'
+
 import { Button } from '../button'
 
 const VideoPreview = ({ stream }) => {
@@ -15,10 +17,13 @@ const VideoPreview = ({ stream }) => {
   return <video ref={videoRef} width={500} heigt={500} autoPlay />
 }
 
-export default function VideoRecorder() {
+export default function MediaRecorder() {
   const [file, setFile] = useState()
+  // const { status, startRecording, stopRecording, mediaBlobUrl, previewStream } =
+  //   useReactMediaRecorder({ video: true, onStop: () => fileHandler })
 
   const fileHandler = (blobUrl, blob) => {
+    console.log('THE FILE HANDLER CALLED:', blob)
     blob.lastModified = new Date()
     console.log('THE BLOB - ADDED META DATA:', blob)
 
@@ -80,12 +85,21 @@ export default function VideoRecorder() {
           previewStream,
         }) => (
           <div>
-            <p>{status}</p>
+            {/* <VideoRecorder
+        constraints={{
+          audio: true,
+          video: true,
+        }}
+        onRecordingComplete={(videoBlob) => {
+          fileHandler(videoBlob)
+        }}
+        onError={(err) => console.log('TEH ERROR:', err)}
+      /> */}
+            <p>Status: {status}</p>
             <VideoPreview stream={previewStream} />
             <Button onClick={startRecording}>Start Recording</Button>
             <Button onClick={stopRecording}>Stop Recording</Button>
             <video
-              autoPlay
               loop
               controls
               style={{

@@ -13,7 +13,8 @@
   position: relative;
   width: 90vw;
   height: 80vh;
-  background-color: #f9f9f9;
+  /* background-color: #f9f9f9; */
+  background: #e0e5ec;
   border-radius: 5px;
 }
 .modalHeader {

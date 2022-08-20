@@ -7,6 +7,7 @@ import {
 } from './contentContainer.module.css'
 
 export const ContentContainer = ({ children }) => {
+  console.log('CHILDREN:', children)
   return (
     <>
       <div className={videoCardsContainer}>

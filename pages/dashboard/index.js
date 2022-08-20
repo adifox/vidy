@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import dynamic from 'next/dynamic'
 import { faHouseChimneyUser } from '@fortawesome/free-solid-svg-icons/faHouseChimneyUser'
-import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons/faArrowRightFromBracket'
+import { faGears } from '@fortawesome/free-solid-svg-icons/faGears'
 import { faPhotoFilm } from '@fortawesome/free-solid-svg-icons/faPhotoFilm'
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons/faTrashCan'
 import { faFolderClosed } from '@fortawesome/free-solid-svg-icons/faFolderClosed'
@@ -16,14 +15,15 @@ import { VideoContainer } from '../../components/container/video-container'
 import { ProjectsContainer } from '../../components/container/projects-container'
 import { BinContainer } from '../../components/container/bin-container'
 import { ProjectForm } from '../../components/proyect-form'
-const VideoRecorder = dynamic(
-  () => {
-    return import('../../components/video')
-  },
-  {
-    ssr: false,
-  }
-)
+// const MediaRecorder = dynamic(
+//   () => {
+//     return import('../../components/media-recorder')
+//   },
+//   {
+//     ssr: false,
+//   }
+// )
+import { VideoSkin } from '../../components/video-skin'
 
 import styles from '../../styles/Dashboard.module.css'
 
@@ -65,9 +65,9 @@ const NAVBAR_DATA = [
     icon: faTrashCan,
   },
   {
-    text: 'Logout',
+    text: 'Settings',
     href: '/',
-    icon: faArrowRightFromBracket,
+    icon: faGears,
   },
 ]
 
@@ -87,8 +87,6 @@ export default function Dashboard() {
   }
 
   const newVideoHandler = () => {
-    console.log('POP UP')
-    setOpenModal(true)
     setVideoRecorder(true)
   }
 
@@ -183,7 +181,11 @@ export default function Dashboard() {
           />
         </div>
         <div className={homeContainer ? splittedElements : fullSize}>
-          {homeContainer && <ContentContainer />}
+          {homeContainer && (
+            <ContentContainer>
+              {videoRecorder && <VideoSkin />}
+            </ContentContainer>
+          )}
           {videoContainer && <VideoContainer />}
           {projectsContainer && (
             <ProjectsContainer projects={createdProjects} />
@@ -193,14 +195,10 @@ export default function Dashboard() {
       </div>
       {openModal && (
         <Modal onClick={() => setOpenModal(false)}>
-          {!videoRecorder ? (
-            <ProjectForm
-              addProject={setCreatedProjects}
-              projects={createdProjects}
-            />
-          ) : (
-            <VideoRecorder />
-          )}
+          <ProjectForm
+            addProject={setCreatedProjects}
+            projects={createdProjects}
+          />
         </Modal>
       )}
     </div>
