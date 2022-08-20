@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { useRef, useEffect, useState } from 'react'
-import { ReactMediaRecorder, useReactMediaRecorder } from 'react-media-recorder'
-// import VideoRecorder from 'react-video-recorder'
+import { ReactMediaRecorder } from 'react-media-recorder'
 
 import { Button } from '../button'
 
@@ -14,7 +13,9 @@ const VideoPreview = ({ stream }) => {
     }
   }, [stream])
 
-  return <video ref={videoRef} width={500} heigt={500} autoPlay />
+  return (
+    <video ref={videoRef} style={{ width: '50vw', height: '500px' }} autoPlay />
+  )
 }
 
 export default function MediaRecorder() {
@@ -41,12 +42,6 @@ export default function MediaRecorder() {
     console.log('THE HEDERS?????', formData)
 
     try {
-      // const response = await axios({
-      //   method: 'post',
-      //   url: '/api/hello',
-      //   data: formData,
-      //   headers: { 'Content-Type': 'multipart/form-data' },
-      // })
       const response = await axios.post('/api/hello', formData, {
         headers: { 'content-type': 'multipart/form-data' },
       })
@@ -57,23 +52,14 @@ export default function MediaRecorder() {
     }
   }
 
-  // const facingMode = 'user'
-  // const constraints = {
-  //   audio: false,
-  //   video: {
-  //     facingMode,
-  //   },
-  // }
-
-  // let videoStream = null
-  // navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
-  //   console.log('THE STREAM:', stream)
-  //   videoStream = stream
-  // })
-
   return (
-    <div>
-      <h2>The video Recorder</h2>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+      }}
+    >
       <ReactMediaRecorder
         video
         onStop={fileHandler}
@@ -84,8 +70,57 @@ export default function MediaRecorder() {
           mediaBlobUrl,
           previewStream,
         }) => (
-          <div>
-            {/* <VideoRecorder
+          <>
+            <span>Status: {status}</span>
+            <div
+              style={{ display: 'flex', background: 'green', width: '100%' }}
+            >
+              <div>
+                {status !== 'stopped' && (
+                  <VideoPreview stream={previewStream} />
+                )}
+                {mediaBlobUrl && (
+                  <video
+                    loop
+                    controls
+                    style={{
+                      width: '50vw',
+                      height: '400px',
+                      border: '2px solid black',
+                    }}
+                    src={mediaBlobUrl}
+                  />
+                )}
+              </div>
+              <div>
+                <Button onClick={startRecording}>Start Recording</Button>
+                <Button onClick={stopRecording}>Stop Recording</Button>
+              </div>
+            </div>
+          </>
+        )}
+      />
+      <Button onClick={handleSaveFile}>Save Video</Button>
+    </div>
+  )
+}
+
+// const facingMode = 'user'
+// const constraints = {
+//   audio: false,
+//   video: {
+//     facingMode,
+//   },
+// }
+
+// let videoStream = null
+// navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+//   console.log('THE STREAM:', stream)
+//   videoStream = stream
+// })
+
+{
+  /* <VideoRecorder
         constraints={{
           audio: true,
           video: true,
@@ -94,25 +129,5 @@ export default function MediaRecorder() {
           fileHandler(videoBlob)
         }}
         onError={(err) => console.log('TEH ERROR:', err)}
-      /> */}
-            <p>Status: {status}</p>
-            <VideoPreview stream={previewStream} />
-            <Button onClick={startRecording}>Start Recording</Button>
-            <Button onClick={stopRecording}>Stop Recording</Button>
-            <video
-              loop
-              controls
-              style={{
-                width: '400px',
-                height: '400px',
-                border: '2px solid black',
-              }}
-              src={mediaBlobUrl}
-            />
-          </div>
-        )}
-      />
-      <Button onClick={handleSaveFile}>Save Video</Button>
-    </div>
-  )
+      /> */
 }

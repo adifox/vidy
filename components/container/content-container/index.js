@@ -11,11 +11,13 @@ export const ContentContainer = ({ children }) => {
   return (
     <>
       <div className={videoCardsContainer}>
-        {children ?? (
+        {!children ? (
           <EmptyAreaInfo
             icon={faVideoSlash}
             text='Click "New Video" and record your first Video.'
           />
+        ) : (
+          children
         )}
       </div>
       <div className={rightSideBar}>
