@@ -20,6 +20,7 @@ export const Button = ({
     <button
       type={type ?? 'button'}
       className={`${buttonStyles} ${className}`}
+      style={{ backgroundColor: color }}
       onClick={onClick}
     >
       <div className={icon ? buttonContentStyles : ''}>

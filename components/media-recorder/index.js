@@ -1,8 +1,14 @@
 import axios from 'axios'
 import { useRef, useEffect, useState } from 'react'
 import { ReactMediaRecorder } from 'react-media-recorder'
-
 import { Button } from '../button'
+import {
+  videoPreviewStyles,
+  mainWrapperStyles,
+  mediaRecorderInnerStyles,
+  recorderVideoStyles,
+  buttonsWrapper,
+} from './MediaRecorder.module.css'
 
 const VideoPreview = ({ stream }) => {
   const videoRef = useRef(null)
@@ -13,12 +19,16 @@ const VideoPreview = ({ stream }) => {
     }
   }, [stream])
 
-  return (
-    <video ref={videoRef} style={{ width: '50vw', height: '500px' }} autoPlay />
+  const content = stream ? (
+    <video ref={videoRef} className={videoPreviewStyles} autoPlay />
+  ) : (
+    <div>START RECORDING</div>
   )
+
+  return content
 }
 
-export default function MediaRecorder() {
+export default function MediaRecorder({ onClick }) {
   const [file, setFile] = useState()
   // const { status, startRecording, stopRecording, mediaBlobUrl, previewStream } =
   //   useReactMediaRecorder({ video: true, onStop: () => fileHandler })
@@ -52,14 +62,26 @@ export default function MediaRecorder() {
     }
   }
 
+  // useEffect(() => {
+  //   return () => {
+  //     console.log('UNMOUNTING')
+  //     // const video = document.querySelector('video')
+  //     // const mediaStream = video.srcObject
+  //     // const tracks = mediaStream.getTracks()
+  //     // tracks.forEach((track) => track.stop())
+  //   }
+  // })
+
+  const handleStop = (stopRecording, stream) => {
+    stopRecording()
+    stream.getTracks().forEach((track) => {
+      console.log('TRACK:', track)
+      track.stop()
+    })
+  }
+
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        width: '100%',
-      }}
-    >
+    <div className={mainWrapperStyles}>
       <ReactMediaRecorder
         video
         onStop={fileHandler}
@@ -69,12 +91,11 @@ export default function MediaRecorder() {
           stopRecording,
           mediaBlobUrl,
           previewStream,
+          clearBlobUrl,
         }) => (
           <>
             <span>Status: {status}</span>
-            <div
-              style={{ display: 'flex', background: 'green', width: '100%' }}
-            >
+            <div className={mediaRecorderInnerStyles}>
               <div>
                 {status !== 'stopped' && (
                   <VideoPreview stream={previewStream} />
@@ -83,24 +104,35 @@ export default function MediaRecorder() {
                   <video
                     loop
                     controls
-                    style={{
-                      width: '50vw',
-                      height: '400px',
-                      border: '2px solid black',
-                    }}
+                    className={recorderVideoStyles}
                     src={mediaBlobUrl}
                   />
                 )}
               </div>
-              <div>
+              <div className={buttonsWrapper}>
                 <Button onClick={startRecording}>Start Recording</Button>
-                <Button onClick={stopRecording}>Stop Recording</Button>
+                <Button
+                  onClick={() => handleStop(stopRecording, previewStream)}
+                >
+                  Stop Recording
+                </Button>
+                <Button onClick={handleSaveFile} color={'blue'}>
+                  Save Video
+                </Button>
+                <Button
+                  onClick={() => {
+                    // onClick(false)
+                    clearBlobUrl()
+                  }}
+                  color={'red'}
+                >
+                  Done
+                </Button>
               </div>
             </div>
           </>
         )}
       />
-      <Button onClick={handleSaveFile}>Save Video</Button>
     </div>
   )
 }

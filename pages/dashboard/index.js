@@ -6,6 +6,8 @@ import { faGears } from '@fortawesome/free-solid-svg-icons/faGears'
 import { faPhotoFilm } from '@fortawesome/free-solid-svg-icons/faPhotoFilm'
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons/faTrashCan'
 import { faFolderClosed } from '@fortawesome/free-solid-svg-icons/faFolderClosed'
+
+// Components
 import { Button } from '../../components/button'
 import { SearchBar } from '../../components/search-bar'
 import { NavbarButton } from '../../components/nav-bar-button'
@@ -15,14 +17,6 @@ import { VideoContainer } from '../../components/container/video-container'
 import { ProjectsContainer } from '../../components/container/projects-container'
 import { BinContainer } from '../../components/container/bin-container'
 import { ProjectForm } from '../../components/proyect-form'
-// const MediaRecorder = dynamic(
-//   () => {
-//     return import('../../components/media-recorder')
-//   },
-//   {
-//     ssr: false,
-//   }
-// )
 import { VideoSkin } from '../../components/video-skin'
 
 import styles from '../../styles/Dashboard.module.css'
@@ -179,11 +173,14 @@ export default function Dashboard() {
             text='New Video with shared Screen'
             className={videoPlusButton}
           />
+          <Link href='/recordvideo'>
+            <a>RECORD VIDEO</a>
+          </Link>
         </div>
         <div className={homeContainer ? splittedElements : fullSize}>
           {homeContainer && (
             <ContentContainer>
-              {videoRecorder && <VideoSkin />}
+              {videoRecorder && <VideoSkin onClick={setVideoRecorder} />}
             </ContentContainer>
           )}
           {videoContainer && <VideoContainer />}

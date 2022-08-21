@@ -20,11 +20,11 @@ import {
   btn,
 } from './videoSkin.module.scss'
 
-export const VideoSkin = () => {
+export const VideoSkin = ({ onClick }) => {
   return (
     <div className={wrapper}>
       <div className={mediaScreen}>
-        <MediaRecorder />
+        <MediaRecorder onClick={onClick} />
       </div>
     </div>
   )
