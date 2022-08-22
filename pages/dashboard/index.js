@@ -169,18 +169,19 @@ export default function Dashboard() {
             onClick={newVideoHandler}
           />
           <Button text='New Audio' className={audioButton} />
-          <Button
-            text='New Video with shared Screen'
-            className={videoPlusButton}
-          />
-          <Link href='/recordvideo'>
-            <a>RECORD VIDEO</a>
-          </Link>
         </div>
         <div className={homeContainer ? splittedElements : fullSize}>
           {homeContainer && (
-            <ContentContainer>
-              {videoRecorder && <VideoSkin onClick={setVideoRecorder} />}
+            <ContentContainer
+              sideBoard={
+                videoRecorder ? (
+                  <Button onClick={() => setVideoRecorder(false)} color='red'>
+                    CLOSE RECORDER
+                  </Button>
+                ) : null
+              }
+            >
+              {videoRecorder && <VideoSkin />}
             </ContentContainer>
           )}
           {videoContainer && <VideoContainer />}

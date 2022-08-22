@@ -6,8 +6,7 @@ import {
   rightSideBar,
 } from './contentContainer.module.css'
 
-export const ContentContainer = ({ children }) => {
-  console.log('CHILDREN:', children)
+export const ContentContainer = ({ children, sideBoard }) => {
   return (
     <>
       <div className={videoCardsContainer}>
@@ -21,10 +20,14 @@ export const ContentContainer = ({ children }) => {
         )}
       </div>
       <div className={rightSideBar}>
-        <EmptyAreaInfo
-          icon={faUserAltSlash}
-          text='Your personal data is empty.'
-        />
+        {!sideBoard ? (
+          <EmptyAreaInfo
+            icon={faUserAltSlash}
+            text='Your personal data is empty.'
+          />
+        ) : (
+          sideBoard
+        )}
       </div>
     </>
   )

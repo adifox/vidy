@@ -32,9 +32,9 @@ export default function MyMediaRecorder({ options, onReady }) {
         console.log('Started Recording')
       })
 
-      player.on('finishRecord', () => {
-        console.log('finished recording:', player.recordedData)
-      })
+      // player.on('finishRecord', () => {
+      //   console.log('finished recording:', player.recordedData)
+      // })
 
       player.on('error', (element, error) => {
         console.warn('PLAYER ERROR:', error)

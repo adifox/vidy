@@ -141,7 +141,7 @@
 }
 .splittedElements {
   display: grid;
-  min-height: calc(100vh - 150px);
+  height: calc(100vh - 150px);
   column-gap: 20px;
   grid-template-columns: 4fr 1fr;
 }
