@@ -12,3 +12,13 @@
   grid-template-columns: 2fr 1fr;
   width: 100%;
 }
+.linkStyles {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}

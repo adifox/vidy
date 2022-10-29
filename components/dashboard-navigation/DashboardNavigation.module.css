@@ -23,7 +23,7 @@
 .dashboardButtonLine {
   margin-bottom: 10px;
 }
-.dashboardButtonLine a {
+.dashboardButtonLine button {
   margin-right: 20px;
 }
 .newProjectButton {
@@ -130,9 +130,9 @@
 }
 .contentContainer {
   min-height: 100vh;
-  /* padding: 80px 20px 30px 20px; */
+  padding: 80px 20px 30px 20px;
   background-color: #eeeeee;
-  /* margin-left: 76px; */
+  margin-left: 76px;
 }
 .dashboard {
   display: grid;

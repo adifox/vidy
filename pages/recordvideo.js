@@ -1,15 +1,15 @@
 import { useRef } from 'react'
 import Link from 'next/link'
 // import { MyMediaRecorder } from '../components/my-media-recorder'
-import dynamic from 'next/dynamic'
-const MyMediaRecorder = dynamic(
-  () => {
-    return import('../components/my-media-recorder')
-  },
-  {
-    ssr: false,
-  }
-)
+// import dynamic from 'next/dynamic'
+// const MyMediaRecorder = dynamic(
+//   () => {
+//     return import('../components/my-media-recorder')
+//   },
+//   {
+//     ssr: false,
+//   }
+// )
 
 export default function RecordVideo() {
   const playerRef = useRef(null)
@@ -77,10 +77,10 @@ export default function RecordVideo() {
   return (
     <div>
       <p>{"VIDEO RECORDER IN IT'S OWN PAGE:"}</p>
-      <Link href='/dashboard'>
+      {/* <Link href='/dashboard'>
         <a>Dashboard</a>
       </Link>
-      <MyMediaRecorder options={videoJsOptions} onReady={handlePlayerReady} />
+      <MyMediaRecorder options={videoJsOptions} onReady={handlePlayerReady} /> */}
       {/* <MediaRecorder /> */}
     </div>
   )
