@@ -6,6 +6,7 @@ import 'video.js/dist/video-js.css'
 import 'videojs-record/dist/css/videojs.record.css'
 
 export default function MyMediaRecorder({ options, onReady }) {
+  // export const MyMediaRecorder = ({ options, onReady }) => {
   const videoRef = useRef(null)
   const playerRef = useRef(null)
 

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { VideoSkin } from '../components/video-skin'
 
 export default function VideoRecorder() {
   return (
@@ -7,6 +8,9 @@ export default function VideoRecorder() {
       <Link href='/dashboard'>
         <a>Back to Dashboard</a>
       </Link>
+      <div>
+        <VideoSkin />
+      </div>
     </div>
   )
 }
