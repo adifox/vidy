@@ -27,7 +27,7 @@ import {
   navBackWrapperStyles,
 } from './videoSkin.module.css'
 
-export const VideoSkin = ({ onClick, recordOptions }) => {
+export const VideoSkin = ({ onClick, recordOptions, audio }) => {
   const [mediaFile, setMediaFile] = useState(null)
   const [fileName, setFileName] = useState()
   const [fileUploaded, setFileUploaded] = useState(false)
@@ -111,7 +111,11 @@ export const VideoSkin = ({ onClick, recordOptions }) => {
   return (
     <div className={wrapper}>
       <div className={mediaScreen}>
-        <MyMediaRecorder options={VideoJsOptions} onReady={handlePlayerReady} />
+        <MyMediaRecorder
+          options={VideoJsOptions}
+          onReady={handlePlayerReady}
+          audio={audio}
+        />
       </div>
       <div className={controlAreaStyles}>
         <div className={playerStatusArea}>
