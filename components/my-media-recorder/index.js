@@ -1,12 +1,23 @@
 import { useEffect, useRef } from 'react'
+import 'video.js/dist/video-js.css'
 import videojs from 'video.js'
+
+import 'webrtc-adapter'
+import RecordRTC from 'recordrtc'
+
 import { VideojsRecord } from 'videojs-record'
 import Record from 'videojs-record/dist/videojs.record.js'
-import 'video.js/dist/video-js.css'
 import 'videojs-record/dist/css/videojs.record.css'
 
-export default function MyMediaRecorder({ options, onReady }) {
-  // export const MyMediaRecorder = ({ options, onReady }) => {
+// apply some workarounds for certain browsers
+// applyVideoWorkaround()
+// applyScreenWorkaround()
+
+export default function MyMediaRecorder({
+  options,
+  onReady,
+  videoOptions = {},
+}) {
   const videoRef = useRef(null)
   const playerRef = useRef(null)
 
@@ -20,31 +31,11 @@ export default function MyMediaRecorder({ options, onReady }) {
         videojs.log(
           'player is ready VERSION and PLUGIN VERSION',
           videojs.VERSION,
-          videojs.getPluginVersion('record')
+          videojs.getPluginVersion('record'),
+          ' and recordrtc ' + RecordRTC.version
         )
         onReady && onReady(player)
       }))
-
-      player.on('deviceReady', () => {
-        console.log('device is ready')
-      })
-
-      player.on('startRecord', () => {
-        console.log('Started Recording')
-      })
-
-      // player.on('finishRecord', () => {
-      //   console.log('finished recording:', player.recordedData)
-      // })
-
-      player.on('error', (element, error) => {
-        console.warn('PLAYER ERROR:', error)
-        console.warn('ON ELEMENT:', element)
-      })
-
-      player.on('deviceError', () => {
-        console.error('device error', player.deviceErrorCode)
-      })
     }
   }, [options, videoRef, onReady])
 
@@ -66,6 +57,7 @@ export default function MyMediaRecorder({ options, onReady }) {
         ref={videoRef}
         className='video-js vjs-big-play-centered'
         playsInline
+        {...videoOptions}
       />
     </div>
   )

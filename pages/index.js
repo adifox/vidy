@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -15,8 +16,14 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <h1 className={styles.title}>Welcome to </h1>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            paddingBottom: '64px',
+          }}
+        >
+          {/* <h1 className={styles.title}>Welcome to </h1> */}
           <Image
             src='/Images/logo_color.png'
             alt='Vidy Logo'
@@ -24,12 +31,12 @@ export default function Home() {
             height={72}
           />
         </div>
-        <p className={styles.description}>
+        {/* <p className={styles.description}>
           Get started by entering{' '}
-          <a className={styles.code} href='/dashboard'>
-            /dashboard
-          </a>
-        </p>
+          <Link href='/dashboard'>
+            <a className={styles.code}>/dashboard</a>
+          </Link>
+        </p> */}
 
         <div className={styles.grid}>
           <a href='https://nextjs.org/docs' className={styles.card}>
@@ -61,7 +68,7 @@ export default function Home() {
           </a>
         </div>
       </main>
-
+      {/* 
       <footer className={styles.footer}>
         <a
           href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
@@ -70,15 +77,15 @@ export default function Home() {
         >
           Powered by{' '}
         </a>
-        {/* <span className={styles.logo}> */}
+        <span className={styles.logo}>
         <Image
           src='/Images/logo_color.png'
           alt='Vidy Logo'
           width={72}
           height={72}
         />
-        {/* </span> */}
-      </footer>
+        </span>
+      </footer> */}
     </div>
   )
 }

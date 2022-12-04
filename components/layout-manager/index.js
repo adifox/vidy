@@ -4,17 +4,31 @@ import { Header } from '../header'
 import { DashboardNavigation } from '../dashboard-navigation'
 import { VideoCanvas } from '../video-canvas'
 
-export const Layout = ({ children }) => {
+export const LayoutManager = ({ children }) => {
   const router = useRouter()
   const { pathname } = router
 
+  let pageTitle = 'Vidylink'
   let content = null
   switch (pathname) {
+    case '/audiorecorder':
+      content = <VideoCanvas>{children}</VideoCanvas>
+      pageTitle = 'Vidylink Audio Recorder'
+      break
+    case '/screenrecorder':
+      content = <VideoCanvas>{children}</VideoCanvas>
+      pageTitle = 'Vidylink Screen Recorder'
+      break
     case '/videorecorder':
       content = <VideoCanvas>{children}</VideoCanvas>
+      pageTitle = 'Vidylink Video Recorder'
       break
     case '/':
       content = <Header>{children}</Header>
+      break
+    case '/about':
+      content = <Header>{children}</Header>
+      pageTitle = 'About Vidylink'
       break
     default:
       content = <DashboardNavigation>{children}</DashboardNavigation>
@@ -24,7 +38,7 @@ export const Layout = ({ children }) => {
   return (
     <>
       <Head>
-        <title>Vidylink</title>
+        <title>{pageTitle}</title>
       </Head>
       {content}
     </>

@@ -11,42 +11,50 @@ export const Button = ({
   className,
   onClick,
   type,
-  icon,
+  iconRight,
   href,
+  iconLeft,
+  disable = false,
 }) => {
   // let buttonStyling = buttonStyles
   // if (className) {
   //   buttonStyling = `${buttonStyles} ${className}`
   // }
 
-  let content = (
+  return href ? (
+    <Link href={href}>
+      <a
+        className={`${linkStyles} ${className}`}
+        style={{ backgroundColor: color }}
+      >
+        <div className={iconLeft || iconRight ? buttonContentStyles : ''}>
+          <span style={{ marginRight: '8px' }}>
+            {iconLeft && <FontAwesomeIcon icon={iconLeft} />}
+          </span>
+          <span>{text ?? children}</span>
+          <span style={{ marginLeft: '8px' }}>
+            {iconRight && <FontAwesomeIcon icon={iconRight} />}
+          </span>
+        </div>
+      </a>
+    </Link>
+  ) : (
     <button
       type={type ?? 'button'}
       className={`${buttonStyles} ${className}`}
       style={{ backgroundColor: color }}
       onClick={onClick}
+      disabled={disable}
     >
-      <div className={icon ? buttonContentStyles : ''}>
+      <div className={iconLeft || iconRight ? buttonContentStyles : ''}>
+        <span style={{ marginRight: '8px' }}>
+          {iconLeft && <FontAwesomeIcon icon={iconLeft} />}
+        </span>
         <span>{text ?? children}</span>
-        <span>{icon && <FontAwesomeIcon icon={icon} />}</span>
+        <span style={{ marginLeft: '8px' }}>
+          {iconRight && <FontAwesomeIcon icon={iconRight} />}
+        </span>
       </div>
     </button>
   )
-  if (href) {
-    content = (
-      <Link href={href}>
-        <a
-          className={`${linkStyles} ${className}`}
-          style={{ backgroundColor: color }}
-        >
-          <div className={icon ? buttonContentStyles : ''}>
-            <span>{text ?? children}</span>
-            <span>{icon && <FontAwesomeIcon icon={icon} />}</span>
-          </div>
-        </a>
-      </Link>
-    )
-  }
-
-  return content
 }

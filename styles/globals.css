@@ -13,6 +13,7 @@ p {
   padding: 0;
   margin: 0;
   font-family: Oxygen-Regular;
+  color: #2b3e52;
 }
 
 a {
@@ -22,4 +23,24 @@ a {
 
 * {
   box-sizing: border-box;
+}
+li,
+h1,
+h2,
+h3,
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
+.vjs-current-time {
+  display: inline-block !important;
+}
+
+.vjs-time-divider {
+  display: inline-block !important;
+}
+
+.vjs-duration {
+  display: inline-block !important;
 }

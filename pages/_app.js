@@ -1,6 +1,10 @@
 import Head from 'next/head'
-import { Layout } from '../components/layout'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+import { config } from '@fortawesome/fontawesome-svg-core'
+import { LayoutManager } from '../components/layout-manager'
 import '../styles/globals.css'
+
+config.autoAddCss = false
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -8,9 +12,9 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta name='viewport' content='initial-scale=1, width=device-width' />
       </Head>
-      <Layout>
+      <LayoutManager>
         <Component {...pageProps} />
-      </Layout>
+      </LayoutManager>
     </>
   )
 }

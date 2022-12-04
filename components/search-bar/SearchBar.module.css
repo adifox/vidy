@@ -7,8 +7,6 @@
   letter-spacing: 1px;
   font-size: 16px;
   font-style: italic;
-  /* width: 400px; */
-  /* color: #b3b3b3; */
 }
 .searchBar svg {
   margin-right: 10px;
@@ -16,14 +14,12 @@
   color: #b3b3b3;
 }
 .searchBarInput {
-  /* margin-left: 10px; */
   border: none;
   background-color: #eeeeee;
   letter-spacing: 1px;
   font-size: 16px;
   font-style: italic;
   min-width: 50vw;
-  /* color: #b3b3b3; */
 }
 .searchBarInput:focus {
   background-color: #fff;

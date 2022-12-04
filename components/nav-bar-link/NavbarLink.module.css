@@ -6,21 +6,17 @@
   padding: 10px 0;
   border: none;
   width: 100%;
-  color: #fff;
   cursor: pointer;
-  /* background-color: #0b4435; */
-  background-color: #293241;
+  background-color: #1c2637;
   border-left-width: 5px;
-  /* border-left-color: #1da079; */
-  border-left-color: #98c1d9;
+  border-left-color: #363e50;
   border-left-style: solid;
 }
 .iconWrapper:hover {
-  /* background-color: #1da079; */
-  background-color: #98c1d9;
+  background-color: #363e50;
 }
 .activeButton {
-  background-color: #98c1d9;
+  background-color: #363e50;
   display: flex;
   box-sizing: border-box;
   flex-direction: column;
@@ -28,15 +24,18 @@
   padding: 10px 0;
   border: none;
   width: 100%;
-  color: #fff;
   cursor: pointer;
   border-left-width: 5px;
-  border-left-color: #98c1d9;
+  border-left-color: #363e50;
   border-left-style: solid;
+}
+.activeButton svg {
+  color: #3a95c9;
 }
 .iconTextStyles {
   font-size: 11px;
   line-height: 12px;
   margin-top: 10px;
   text-align: center;
+  color: #fff;
 }

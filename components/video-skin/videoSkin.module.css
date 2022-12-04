@@ -1,0 +1,96 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: 24px;
+  height: 100%;
+}
+.mediaScreen {
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 5px solid rgba(58, 149, 201, 1);
+}
+.controlAreaStyles {
+  position: relative;
+  padding-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 1px solid #fff9;
+  width: 100%;
+  border: 1px solid rgba(58, 149, 201, 1);
+  border-radius: 10px;
+  background-color: #1c2637;
+  color: #fff;
+}
+.playerStatusArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.playerStatusHeaderStyles {
+  text-transform: uppercase;
+  background-color: hsla(0, 0%, 100%, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+.playerStatusStyles {
+  text-transform: uppercase;
+  margin: 48px 0;
+  color: #fff;
+}
+.blink {
+  animation: blinker 2s steps(1, start) infinite;
+  background-color: #0b0b0b;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  margin: 24px 0;
+}
+
+@keyframes blinker {
+  50% {
+    background-color: #ff5555;
+  }
+}
+.mediaNameInputStyles {
+  margin-top: 48px;
+}
+.mediaNameInputStyles input {
+  border: none;
+  border-bottom: 1px solid #3a95c9;
+  letter-spacing: 1px;
+  font-size: 16px;
+  min-width: 250px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #0b0b0b;
+}
+.mediaNameInputStyles input:focus {
+  opacity: 1;
+}
+.saveFileButton {
+  margin-top: 16px;
+  border: 1px solid #3a95c9;
+  color: #fff;
+  background-color: transparent;
+  transition: all ease 0.15s;
+}
+.saveFileButton:hover {
+  background-color: #3a95c9;
+}
+.navBackWrapperStyles {
+  position: absolute;
+  bottom: 16px;
+}
+.backToDashboardButton {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #3a95c9;
+  transition: all ease 0.15s;
+}
+.backToDashboardButton:hover {
+  background-color: #3a95c9;
+}

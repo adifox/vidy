@@ -19,20 +19,7 @@ const {
   contentContainer,
   navBarIconContainer,
   newProjectButton,
-  // dashboard,
-  // dashboardButtonLine,
-  // videoButton,
-  // audioButton,
-  // videoPlusButton,
-  // fullSize,
-  // splittedElements,
 } = styles
-
-// import { ContentContainer } from '../container/content-container'
-// import { VideoContainer } from '../container/video-container'
-// import { ProjectsContainer } from '../container/projects-container'
-// import { BinContainer } from '../container/bin-container'
-// import { VideoSkin } from '../video-skin'
 
 export const DashboardNavigation = ({ children }) => {
   const [openModal, setOpenModal] = useState(false)

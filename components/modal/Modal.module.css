@@ -14,7 +14,6 @@
   width: 90vw;
   height: 80vh;
   background-color: #f9f9f9;
-  /* background: #e0e5ec; */
   border-radius: 5px;
 }
 .modalHeader {
@@ -28,7 +27,6 @@
   margin-top: 5px;
   margin-right: 5px;
   background-color: #e0fbfc;
-  /* position: relative; */
   transition-duration: 0.4s;
   -webkit-transition-duration: 0.4s;
 }

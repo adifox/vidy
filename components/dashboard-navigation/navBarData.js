@@ -11,12 +11,12 @@ export const navBarData = [
     icon: faHouseChimneyUser,
   },
   {
-    text: 'All Videos',
+    text: 'My Videos',
     href: '/videoboard',
     icon: faPhotoFilm,
   },
   {
-    text: 'Projects',
+    text: 'My Projects',
     href: '/',
     icon: faFolderClosed,
   },

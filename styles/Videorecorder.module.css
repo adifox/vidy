@@ -1,0 +1,12 @@
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1c2637;
+}
+
+.videoskinWrapper {
+  height: 90vh;
+}
