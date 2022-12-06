@@ -1,6 +1,6 @@
 import { faVideoSlash } from '@fortawesome/free-solid-svg-icons/faVideoSlash'
 // import { faUserAltSlash } from '@fortawesome/free-solid-svg-icons/faUserAltSlash'
-import { EmptyAreaInfo } from '../../empty-area-info'
+import { EmptyAreaInfo } from '../../ui-components/empty-area-info'
 import { videoCardsContainer } from './videoContainer.module.css'
 
 export const VideoContainer = () => {

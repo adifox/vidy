@@ -1,3 +1,9 @@
+import { SettingsContainer } from '../../components/containers/settings-container'
+
 export default function Page() {
-  return <div>Logic to modify Settings</div>
+  return (
+    <div>
+      <SettingsContainer />
+    </div>
+  )
 }

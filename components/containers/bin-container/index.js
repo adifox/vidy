@@ -1,5 +1,5 @@
 import { faTrashRestore } from '@fortawesome/free-solid-svg-icons/faTrashRestore'
-import { EmptyAreaInfo } from '../../empty-area-info'
+import { EmptyAreaInfo } from '../../ui-components/empty-area-info'
 import { binContainerStyles } from './binContainer.module.css'
 
 export const BinContainer = () => {

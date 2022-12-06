@@ -1,3 +1,9 @@
+import { VideoContainer } from '../../components/containers/video-container'
+
 export default function Page() {
-  return <div>Listing of all my media</div>
+  return (
+    <div>
+      <VideoContainer />
+    </div>
+  )
 }

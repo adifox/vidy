@@ -1,5 +1,5 @@
 // Components
-import { ContentContainer } from '../../components/container/content-container'
+import { ContentContainer } from '../../components/containers/content-container'
 import { Button } from '../../components/ui-components/button'
 
 // Styles

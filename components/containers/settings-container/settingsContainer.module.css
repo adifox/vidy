@@ -1,4 +1,4 @@
-.binContainerStyles {
+.settingsContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,12 +6,13 @@
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 4px #0003;
+  padding: 24px;
 }
-.binContainerStyles p {
+.settingsContainer p {
   color: #808080;
   margin-top: 10px;
 }
-.binContainerStyles svg {
+.settingsContainer svg {
   height: 50px;
   opacity: 0.5;
 }
