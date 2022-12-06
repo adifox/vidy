@@ -4,14 +4,15 @@ import Image from 'next/image'
 import { navBarData } from './navBarData'
 
 // Components
-import { Button } from '../button'
-import { SearchBar } from '../search-bar'
-import { NavbarLink } from '../nav-bar-link'
-import { Modal } from '../modal'
-import { ProjectForm } from '../proyect-form'
+
+import { Button } from '../ui-components/button'
+import { SearchBar } from '../ui-components/search-bar'
+import { NavbarLink } from '../ui-components/nav-bar-link'
+import { Modal } from '../ui-components/modal'
+import { ProjectForm } from '../ui-components/proyect-form'
 
 // Styles
-import styles from './DashboardNavigation.module.css'
+import styles from './DashboardWrapper.module.css'
 const {
   header,
   headerContainer,
@@ -21,7 +22,7 @@ const {
   newProjectButton,
 } = styles
 
-export const DashboardNavigation = ({ children }) => {
+export const DashboardWrapper = ({ children }) => {
   const [openModal, setOpenModal] = useState(false)
   const [buttonIndex, setButtonIndex] = useState(0)
   const [createdProjects, setCreatedProjects] = useState([])

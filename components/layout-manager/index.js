@@ -1,8 +1,8 @@
-import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { Header } from '../header'
-import { DashboardNavigation } from '../dashboard-navigation'
-import { VideoCanvas } from '../video-canvas'
+// Components
+import Head from 'next/head'
+import { MainContainer } from '../main-container'
+import { DashboardWrapper } from '../dashboard-wrapper'
 
 export const LayoutManager = ({ children }) => {
   const router = useRouter()
@@ -11,27 +11,27 @@ export const LayoutManager = ({ children }) => {
   let pageTitle = 'Vidylink'
   let content = null
   switch (pathname) {
-    case '/audiorecorder':
-      content = <VideoCanvas>{children}</VideoCanvas>
+    case '/dashboard/audiorecorder':
+      content = <>{children}</>
       pageTitle = 'Vidylink Audio Recorder'
       break
-    case '/screenrecorder':
-      content = <VideoCanvas>{children}</VideoCanvas>
+    case '/dashboard/screenrecorder':
+      content = <>{children}</>
       pageTitle = 'Vidylink Screen Recorder'
       break
-    case '/videorecorder':
-      content = <VideoCanvas>{children}</VideoCanvas>
+    case '/dashboard/videorecorder':
+      content = <>{children}</>
       pageTitle = 'Vidylink Video Recorder'
       break
     case '/':
-      content = <Header>{children}</Header>
+      content = <MainContainer>{children}</MainContainer>
       break
     case '/about':
-      content = <Header>{children}</Header>
+      content = <MainContainer>{children}</MainContainer>
       pageTitle = 'About Vidylink'
       break
     default:
-      content = <DashboardNavigation>{children}</DashboardNavigation>
+      content = <DashboardWrapper>{children}</DashboardWrapper>
       break
   }
 

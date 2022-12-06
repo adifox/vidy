@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
+// Components
 import Link from 'next/link'
-
+// Styles
 import {
   headerWrapperStyles,
   headerShadowStyles,
@@ -9,7 +9,6 @@ import {
   navBarStyles,
   accessAreaStyles,
   getStartedStyles,
-  footer,
 } from './header.module.css'
 
 export const Header = ({ children }) => {
@@ -50,21 +49,6 @@ export const Header = ({ children }) => {
         </div>
       </div>
       {children}
-      <footer className={footer}>
-        <a
-          href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Powered by{' '}
-        </a>
-        <Image
-          src='/Images/logo_color.png'
-          alt='Vidy Logo'
-          width={72}
-          height={72}
-        />
-      </footer>
     </>
   )
 }

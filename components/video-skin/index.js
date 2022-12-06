@@ -3,15 +3,15 @@ import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
 import dynamic from 'next/dynamic'
 // Player can be loaded only on client side.
-const MyMediaRecorder = dynamic(
+const MediaRecorder = dynamic(
   () => {
-    return import('../my-media-recorder')
+    return import('../media-recorder')
   },
   {
     ssr: false,
   }
 )
-import { Button } from '../button'
+import { Button } from '../ui-components/button'
 
 import {
   wrapper,
@@ -111,7 +111,7 @@ export const VideoSkin = ({ onClick, recordOptions, audio }) => {
   return (
     <div className={wrapper}>
       <div className={mediaScreen}>
-        <MyMediaRecorder
+        <MediaRecorder
           options={VideoJsOptions}
           onReady={handlePlayerReady}
           audio={audio}

@@ -1,9 +1,9 @@
 // Components
-import { ContentContainer } from '../components/container/content-container'
-import { Button } from '../components/button'
+import { ContentContainer } from '../../components/container/content-container'
+import { Button } from '../../components/ui-components/button'
 
 // Styles
-import styles from '../styles/Dashboard.module.css'
+import styles from '../../styles/Dashboard.module.css'
 const {
   contentContainer,
   dashboardButtonLine,
@@ -20,17 +20,17 @@ export default function Dashboard() {
         <Button
           text='Record Video'
           className={videoButton}
-          href='/videorecorder'
+          href='dashboard/videorecorder'
         />
         <Button
           text='Record Screen'
           className={videoScreenShareButton}
-          href='/screenrecorder'
+          href='dashboard/screenrecorder'
         />
         <Button
           text='Record Audio'
           className={audioButton}
-          href='/audiorecorder'
+          href='dashboard/audiorecorder'
         />
       </div>
       <div className={splittedElements}>

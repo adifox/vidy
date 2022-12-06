@@ -11,23 +11,23 @@ export const navBarData = [
     icon: faHouseChimneyUser,
   },
   {
-    text: 'My Videos',
-    href: '/videoboard',
+    text: 'My Media',
+    href: '/dashboard/mediaboard',
     icon: faPhotoFilm,
   },
   {
     text: 'My Projects',
-    href: '/',
+    href: '/dashboard/my-projects',
     icon: faFolderClosed,
   },
   {
-    text: 'Removed Videos',
-    href: '/',
+    text: 'Removed Media',
+    href: '/dashboard/remove-media',
     icon: faTrashCan,
   },
   {
     text: 'Settings',
-    href: '/',
+    href: '/dashboard/settings',
     icon: faGears,
   },
 ]

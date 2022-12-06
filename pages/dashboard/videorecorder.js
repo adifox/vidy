@@ -1,15 +1,15 @@
 // Components
-import { VideoSkin } from '../components/video-skin'
+import { VideoSkin } from '../../components/video-skin'
 // Styles
 import {
   videoskinWrapper,
   pageWrapper,
-} from '../styles/VideoRecorder.module.css'
+} from '../../styles/VideoRecorder.module.css'
 
-export default function ScreenRecorder() {
+export default function VideoRecorder() {
   const options = {
     record: {
-      screen: true,
+      video: true,
       audio: true,
       maxLength: 60,
       debug: true,

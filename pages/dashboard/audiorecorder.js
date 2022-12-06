@@ -1,10 +1,10 @@
 // Components
-import { VideoSkin } from '../components/video-skin'
+import { VideoSkin } from '../../components/video-skin'
 // Styles
 import {
   videoskinWrapper,
   pageWrapper,
-} from '../styles/VideoRecorder.module.css'
+} from '../../styles/VideoRecorder.module.css'
 
 export default function AudioRecorder() {
   const options = {

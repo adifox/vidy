@@ -26,7 +26,7 @@ import Wavesurfer from 'videojs-wavesurfer/dist/videojs.wavesurfer.js'
 // applyVideoWorkaround()
 // applyScreenWorkaround()
 
-export default function MyMediaRecorder({
+export default function MediaRecorder({
   options,
   onReady,
   videoOptions = {},
