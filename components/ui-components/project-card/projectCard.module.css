@@ -1,16 +1,18 @@
 .wrapperStyles {
   display: flex;
   flex-direction: column;
-  border: 1px solid #efefef;
+  border-left: 50px solid red;
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 2px 4px #0003;
+  background-color: #fff;
 }
 .cardHeader {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding: 4px 4px 4px 16px;
-  background-color: red;
-  color: #fff;
+  box-shadow: 0 1px 2px #0003;
+  color: #0009;
 }
 .cardHeader h4 {
   margin: 0;

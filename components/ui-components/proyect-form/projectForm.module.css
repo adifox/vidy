@@ -7,6 +7,9 @@
     'form previewBox'
     'createdProjects createdProjects';
 }
+.wrappingStyles h2 {
+  margin-bottom: 24px;
+}
 .formStyles {
   grid-area: form;
   display: flex;
@@ -26,14 +29,17 @@
 }
 .formButtonStyles {
   margin-top: 48px;
-  background-color: #14ad84;
+  border: 1px solid #42a476;
+  color: #42a476;
+  background-color: #fff;
   transition: all 0.3s;
 }
 .formButtonStyles:active {
   transform: scale(0.98);
 }
 .formButtonStyles:hover {
-  background-color: #149e77;
+  color: #fff;
+  background-color: #42a476;
 }
 
 .previewBoxStyles {
@@ -48,6 +54,7 @@
   background-color: #fff;
   border-radius: 5px;
   padding: 24px;
+  box-shadow: 0 1px 2px #0003;
 }
 .cardsListWrapperStyles {
   display: flex;

@@ -14,7 +14,7 @@ import {
 } from './projectForm.module.css'
 
 const INITIAL_VALUES = {
-  projectName: '',
+  projectName: 'Project Name',
   selectBorder: '#000',
 }
 

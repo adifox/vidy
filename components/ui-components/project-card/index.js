@@ -6,15 +6,14 @@ import {
   cardFooterStyles,
 } from './projectCard.module.css'
 
-export const ProjectCard = ({ projectName, color }) => {
+export const ProjectCard = ({ projectName, color, children }) => {
   return (
-    <div className={wrapperStyles}>
-      <div className={cardHeader} style={{ backgroundColor: color }}>
+    <div className={wrapperStyles} style={{ borderLeftColor: color }}>
+      <div className={cardHeader}>
         <h4>{projectName}</h4>
       </div>
       <div className={cardBodyStyles}>
-        <div className={cardContent}></div>
-        <div className={cardFooterStyles}>Card Footer</div>
+        <div className={cardContent}>{children}</div>
       </div>
     </div>
   )
