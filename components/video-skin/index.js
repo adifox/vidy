@@ -64,7 +64,13 @@ export const VideoSkin = ({ onClick, recordOptions, audio }) => {
     })
 
     player.on('startRecord', () => {
-      setPlayerStatus('Recording')
+      setPlayerStatus((prev) => {
+        if (prev) {
+          return 'Re-recording'
+        } else {
+          return 'Recording'
+        }
+      })
     })
 
     player.on('finishRecord', () => {
@@ -99,7 +105,7 @@ export const VideoSkin = ({ onClick, recordOptions, audio }) => {
   }
 
   let statusStylings = playerStatusStyles
-  if (playerStatus === 'Recording') {
+  if (playerStatus === 'Recording' || playerStatus === 'Re-recording') {
     statusStylings = blink
   }
 
@@ -122,7 +128,7 @@ export const VideoSkin = ({ onClick, recordOptions, audio }) => {
           <h2 className={playerStatusHeaderStyles}>Player status</h2>
           <p className={statusStylings}>{playerStatus}</p>
         </div>
-        {playerStatus === 'Recording finished' && !fileUploaded && (
+        {mediaFile && !fileUploaded && (
           <>
             <h4 style={{ margin: '24px 0', textAlign: 'center' }}>
               Are you ready to save the media file?

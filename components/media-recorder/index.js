@@ -14,9 +14,9 @@ import WaveSurfer from 'wavesurfer.js'
 import MicrophonePlugin from 'wavesurfer.js/dist/plugin/wavesurfer.microphone.js'
 WaveSurfer.microphone = MicrophonePlugin
 
-import recorderjs from 'recorderjs'
+import 'recorderjs/recorder.js'
 
-console.log('RECORDER JS:', recorderjs)
+// console.log('RECORDER JS:', recorderjs)
 
 // Register videojs-wavesurfer plugin
 import 'videojs-wavesurfer/dist/css/videojs.wavesurfer.css'
@@ -41,10 +41,10 @@ export default function MediaRecorder({
       plugins: {
         wavesurfer: {
           backend: 'WebAudio',
-          waveColor: '#36393b',
+          waveColor: '#3a95c9',
           progressColor: 'black',
           debug: true,
-          cursorWidth: 1,
+          cursorWidth: 10,
           msDisplayMax: 20,
           hideScrollbar: true,
           displayMilliseconds: true,
