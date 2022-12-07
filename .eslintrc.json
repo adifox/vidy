@@ -30,8 +30,6 @@
     "jsx-a11y/label-has-for": 0,
     "jsx-a11y/anchor-is-valid": 0,
     // __ NEXT.JS
-    "react/react-in-jsx-scope": 0,
-    // __ PRETTIER
-    "prettier/prettier": ["error", { "singleQuote": true }]
+    "react/react-in-jsx-scope": 0
   }
 }
