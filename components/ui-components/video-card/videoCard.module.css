@@ -1,0 +1,84 @@
+.wrapperStyles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px #0003;
+  background-color: #fff;
+  width: fit-content;
+  height: 100%;
+}
+.cardHeader {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 4px 4px 4px 16px;
+  box-shadow: 0 1px 2px #0003;
+  color: #0009;
+}
+.cardHeader h4 {
+  margin: 0;
+}
+.cardBodyStyles {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px 0px;
+}
+.cardContent {
+  padding: 0px 8px;
+}
+.thumbnailStyles {
+  box-shadow: 0 1px 2px #0003;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  max-width: 500px;
+  height: 100%;
+}
+.image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+.detailsStyles {
+  display: flex;
+  flex-direction: column;
+}
+.detailsStyles h3 {
+  white-space: nowrap;
+}
+.lowerContent {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 8px;
+}
+.avatarWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cardFooterStyles {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  margin-top: 8px;
+  color: #0009;
+}
+.cardFooterStyles ul {
+  display: flex;
+  flex-direction: row;
+}
+.cardFooterStyles li {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-right: 8px;
+}
+.cardFooterStyles span {
+  margin-left: 6px;
+  font-size: 12px;
+}
+.cardFooterStyles svg {
+  color: #3a95c9;
+}

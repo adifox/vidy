@@ -1,9 +1,9 @@
-import { ProjectCard } from '../components/ui-components/project-card'
+import { VideoCard } from '../components/ui-components/video-card'
 
 export default function Page() {
   return (
     <div>
-      <ProjectCard />
+      <VideoCard />
     </div>
   )
 }

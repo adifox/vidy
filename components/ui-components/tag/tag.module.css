@@ -1,0 +1,11 @@
+.tagStyles {
+  /* margin-right: 24px; */
+  height: 100%;
+}
+.tagStyles span {
+  display: flex;
+  align-items: center;
+  border: 1px solid #0009;
+  padding: 4px 8px;
+  border-radius: 50px;
+}

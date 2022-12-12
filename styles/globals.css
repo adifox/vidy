@@ -3,8 +3,8 @@
   src: url('/fonts/Oxygen-Regular.ttf');
   src: local('Oxygen'), local('Oxygen-Regular'),
     url('/fonts/Oxygen-Regular.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
+  /* font-weight: 800; */
+  /* font-style: normal; */
 }
 
 html,

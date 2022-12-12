@@ -1,9 +1,9 @@
-import { VideoContainer } from '../../components/containers/video-container'
+import { MediaContainer } from '../../components/containers/media-container'
 
 export default function Page() {
   return (
     <div>
-      <VideoContainer />
+      <MediaContainer />
     </div>
   )
 }
