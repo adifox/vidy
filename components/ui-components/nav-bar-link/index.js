@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -6,10 +7,12 @@ import {
   activeButton,
 } from './NavbarLink.module.css'
 
-export const NavbarLink = ({ text, onClick, icon, active, href }) => {
+export const NavbarLink = ({ text, icon, href }) => {
+  const router = useRouter()
+
   return (
     <Link href={href}>
-      <a className={active ? activeButton : iconWrapper} onClick={onClick}>
+      <a className={href === router.pathname ? activeButton : iconWrapper}>
         <FontAwesomeIcon icon={icon} />
         <span className={iconTextStyles}>{text}</span>
       </a>

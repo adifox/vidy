@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { navBarData } from './navBarData'
 
 // Components
-
 import { Button } from '../ui-components/button'
 import { SearchBar } from '../ui-components/search-bar'
 import { NavbarLink } from '../ui-components/nav-bar-link'
@@ -24,7 +23,6 @@ const {
 
 export const DashboardWrapper = ({ children }) => {
   const [openModal, setOpenModal] = useState(false)
-  const [buttonIndex, setButtonIndex] = useState(0)
   const [createdProjects, setCreatedProjects] = useState([])
 
   const handleNewProject = () => {
@@ -60,12 +58,7 @@ export const DashboardWrapper = ({ children }) => {
           <ul>
             {navBarData.map((component, index) => (
               <li key={index}>
-                <NavbarLink
-                  {...component}
-                  active={index === buttonIndex}
-                  onClick={() => setButtonIndex(index)}
-                  href={component.href}
-                />
+                <NavbarLink {...component} href={component.href} />
               </li>
             ))}
           </ul>
