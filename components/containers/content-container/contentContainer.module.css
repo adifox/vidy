@@ -1,20 +1,41 @@
-.videoCardsContainer,
-.rightSideBar {
+.videoCardsContainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px #0003;
+  min-height: 100vh;
 }
-.videoCardsContainer p,
-.rightSideBar p {
+/* .videoCardsContainer p {
   color: #808080;
   margin-top: 10px;
 }
-.videoCardsContainer svg,
-.rightSideBar svg {
+.videoCardsContainer svg {
   height: 50px;
   opacity: 0.5;
+} */
+.personalAreaBanner {
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px #0003;
+  height: 256px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  background-image: url('/Images/tape.png');
+  background-size: cover;
+  background-position: center;
+}
+.personalAreaLayover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(138, 43, 226, 50%);
+}
+.personalAreaContent {
+  padding: 24px;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  color: #fff;
+}
+.bodyContent h3 {
+  font-size: 24px;
+  color: #07080a;
 }

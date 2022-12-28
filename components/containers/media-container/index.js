@@ -3,7 +3,10 @@ import { VideoCard } from '../../ui-components/video-card'
 import { faVideoSlash } from '@fortawesome/free-solid-svg-icons/faVideoSlash'
 import { EmptyAreaInfo } from '../../ui-components/empty-area-info'
 // Styles
-import { videoCardsContainer } from './videoContainer.module.css'
+import {
+  videoCardsContainer,
+  mediaContainerHeaderStyles,
+} from './mediaContainer.module.css'
 
 const media = [
   {
@@ -40,6 +43,7 @@ export const MediaContainer = () => {
   }
   return (
     <>
+      <div className={mediaContainerHeaderStyles}>Some fancy header</div>
       <div className={videoCardsContainer}>{content}</div>
     </>
   )

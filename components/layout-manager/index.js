@@ -23,6 +23,10 @@ export const LayoutManager = ({ children }) => {
       content = <>{children}</>
       pageTitle = 'Vidylink Video Recorder'
       break
+    case '/dashboard/media-player':
+      content = <>{children}</>
+      pageTitle = 'Vidylink Media Player'
+      break
     case '/':
       content = <MainContainer>{children}</MainContainer>
       break

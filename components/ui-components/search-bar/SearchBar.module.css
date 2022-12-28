@@ -1,5 +1,5 @@
 .searchBar {
-  margin-left: 20px;
+  margin-left: 16px;
   border: none;
   background-color: #eeeeee;
   padding: 10px;
@@ -19,7 +19,8 @@
   letter-spacing: 1px;
   font-size: 16px;
   font-style: italic;
-  min-width: 50vw;
+  width: 20vw;
+  max-width: 20vw;
 }
 .searchBarInput:focus {
   background-color: #fff;

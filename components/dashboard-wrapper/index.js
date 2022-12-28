@@ -19,6 +19,9 @@ const {
   contentContainer,
   navBarIconContainer,
   newProjectButton,
+  videoButton,
+  videoScreenShareButton,
+  audioButton,
 } = styles
 
 export const DashboardWrapper = ({ children }) => {
@@ -33,12 +36,31 @@ export const DashboardWrapper = ({ children }) => {
     <div style={{ position: 'relative' }}>
       <div className={header}>
         <div className={headerContainer}>
-          <Button
-            text='New Project'
-            className={newProjectButton}
-            onClick={handleNewProject}
-          />
-          <SearchBar />
+          <div style={{ display: 'flex' }}>
+            <Button
+              text='New Project'
+              className={newProjectButton}
+              onClick={handleNewProject}
+            />
+            <SearchBar />
+          </div>
+          <div style={{ display: 'flex' }}>
+            <Button
+              text='Record Video'
+              className={videoButton}
+              href='dashboard/videorecorder'
+            />
+            <Button
+              text='Record Screen'
+              className={videoScreenShareButton}
+              href='dashboard/screenrecorder'
+            />
+            <Button
+              text='Record Audio'
+              className={audioButton}
+              href='dashboard/audiorecorder'
+            />
+          </div>
         </div>
       </div>
       <div className={navBar}>

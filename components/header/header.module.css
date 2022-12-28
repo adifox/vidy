@@ -2,25 +2,46 @@
 .headerShadowStyles {
   position: fixed;
   z-index: 100;
-  display: flex;
+  /* display: flex; */
   background-color: #fff;
-  flex-direction: row;
+  /* flex-direction: row; */
   width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  padding: 16px;
   transition: all 0.15s ease;
 }
 .headerShadowStyles {
   box-shadow: 0 0 10px rgb(0 0 0 / 10%);
 }
+.logoStyles {
+  display: flex;
+  align-items: center;
+}
+.logoLinkStyles {
+  padding-top: 4px;
+  margin-right: 4px;
+}
+.companyNameStyles {
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 24px;
+  color: #000;
+}
 .navBarStyles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .accessAreaStyles {
   height: 100%;
 }
 .getStartedStyles {
-  padding: 11px 17px;
+  font-size: 14px;
+  padding: 8px 16px;
   border: 1px solid #42a476;
   border-radius: 20px;
   transition: color 0.15s ease, border-color 0.15s ease,
@@ -36,5 +57,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   list-style: none;
+}
+.ulistStyles h3 {
+  font-weight: bold;
 }

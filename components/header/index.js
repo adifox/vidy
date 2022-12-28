@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 // Components
 import Link from 'next/link'
+import Image from 'next/image'
 // Styles
 import {
   headerWrapperStyles,
@@ -9,9 +10,12 @@ import {
   navBarStyles,
   accessAreaStyles,
   getStartedStyles,
+  logoStyles,
+  companyNameStyles,
+  logoLinkStyles,
 } from './header.module.css'
 
-export const Header = ({ children }) => {
+export const Header = () => {
   const [negativeHeaderShadow, setNegativeHeaderShadow] = useState(true)
 
   useEffect(() => {
@@ -31,24 +35,29 @@ export const Header = ({ children }) => {
           negativeHeaderShadow ? headerWrapperStyles : headerShadowStyles
         }
       >
-        <nav className={navBarStyles}>
-          <ul className={ulistStyles}>
-            <li>
+        <div className={navBarStyles}>
+          <nav>
+            <div className={logoStyles}>
               <Link href='/about'>
-                <a>
-                  <h1>What is Vidylink ?</h1>
+                <a className={logoLinkStyles}>
+                  <Image
+                    src='/Images/logo_color.png'
+                    alt='Vidy Logo'
+                    width={32}
+                    height={32}
+                  />
                 </a>
               </Link>
-            </li>
-          </ul>
-        </nav>
-        <div className={accessAreaStyles}>
-          <Link href='/dashboard'>
-            <a className={getStartedStyles}>GET STARTED</a>
-          </Link>
+              <p className={companyNameStyles}>vidylink</p>
+            </div>
+          </nav>
+          <div className={accessAreaStyles}>
+            <Link href='/dashboard'>
+              <a className={getStartedStyles}>Get started</a>
+            </Link>
+          </div>
         </div>
       </div>
-      {children}
     </>
   )
 }

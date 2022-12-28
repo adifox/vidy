@@ -15,17 +15,6 @@ function MyApp({ Component, pageProps }) {
           name='viewport'
           content='initial-scale=1, width=device-width'
         />
-        <meta
-          key='msapplication-TileColor'
-          name='msapplication-TileColor'
-          content='#ffffff'
-        />
-        <meta
-          key='msapplication-TileImage'
-          name='msapplication-TileImage'
-          content='/ms-icon-144x144.png'
-        />
-        <meta key='theme-color' name='theme-color' content='#ffffff' />
       </Head>
       <LayoutManager>
         <Component {...pageProps} />

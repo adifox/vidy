@@ -1,34 +1,13 @@
 .contentContainer {
   min-height: 100vh;
   background-color: #eeeeee;
+  max-width: 1440px;
+  padding: 0 24px 0 24px;
+  margin: 32px auto;
 }
-.dashboardButtonLine {
-  margin-bottom: 10px;
-}
-.dashboardButtonLine a {
-  margin-right: 20px;
-}
-
-.videoButton,
-.audioButton,
-.videoScreenShareButton {
-  background-color: #3a95c9;
-  transition: all 0.3s;
-}
-.videoButton:hover,
-.audioButton:hover,
-.videoScreenShareButton:hover {
-  background-color: rgb(45, 120, 164);
-}
-
-.videoButton:active,
-.audioButton:active,
-.videoScreenShareButton:active {
-  transform: scale(0.98);
-}
-.splittedElements {
+/* .splittedElements {
   display: grid;
   height: calc(100vh - 150px);
   column-gap: 20px;
   grid-template-columns: 4fr 1fr;
-}
+} */

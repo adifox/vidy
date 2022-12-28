@@ -16,6 +16,9 @@ const colors = [
   {
     color: '#66381d',
   },
+  {
+    color: '#d7c30e',
+  },
 ]
 
 export const Avatar = ({ image, user, i }) => {

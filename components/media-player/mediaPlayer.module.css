@@ -1,0 +1,13 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: 24px;
+  height: 100%;
+}
+.mediaScreen {
+  position: relative;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 5px solid rgba(58, 149, 201, 1);
+}

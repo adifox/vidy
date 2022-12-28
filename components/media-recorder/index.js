@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react'
 import 'video.js/dist/video-js.css'
 import videojs from 'video.js'
+// Sea
+import '@videojs/themes/dist/sea/index.css'
 
 import 'webrtc-adapter'
 import RecordRTC from 'recordrtc'
@@ -9,12 +11,17 @@ import { VideojsRecord } from 'videojs-record'
 import Record from 'videojs-record/dist/videojs.record.js'
 import 'videojs-record/dist/css/videojs.record.css'
 
+import './mediaRecorder.module.css'
+
 // FOR AUDIO RECORDING
 import WaveSurfer from 'wavesurfer.js'
 import MicrophonePlugin from 'wavesurfer.js/dist/plugin/wavesurfer.microphone.js'
 WaveSurfer.microphone = MicrophonePlugin
 
 import 'recorderjs/recorder.js'
+// import * as video from 'videojs.zoomrotate.js'
+
+// console.log('ZOOM VIDEO:', video)
 
 // console.log('RECORDER JS:', recorderjs)
 
@@ -112,13 +119,13 @@ export default function MediaRecorder({
   }, [playerRef])
 
   return audio ? (
-    <audio id='myAudio' ref={mediaRef} className='video-js vjs-default-skin' />
+    <audio id='myAudio' ref={mediaRef} className='video-js vjs-theme-sea' />
   ) : (
     <div data-vjs-player>
       <video
         id='myVideo'
         ref={mediaRef}
-        className='video-js vjs-big-play-centered'
+        className='video-js vjs-theme-sea'
         playsInline
         {...videoOptions}
       />

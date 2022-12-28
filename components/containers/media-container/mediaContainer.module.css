@@ -1,0 +1,34 @@
+.mediaContainerHeaderStyles {
+  width: 100%;
+  height: 192px;
+  padding: 0px 26px 0 48px;
+  background-image: linear-gradient(to bottom right, #42a476, #3a95c9);
+}
+.videoCardsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  max-width: 1440px;
+  margin: 0 auto;
+  /* flex-wrap: wrap; */
+  /* display: grid; */
+  /* grid-template-rows: 1fr; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* flex-direction: column; */
+  /* background-color: #fff; */
+  /* border-radius: 5px; */
+  /* box-shadow: 0 2px 4px #0003; */
+  padding: 24px;
+}
+/* .videoCardsContainer p {
+  color: #808080;
+  margin-top: 10px;
+} */
+
+/* Fix style only for empty container */
+/* .videoCardsContainer svg {
+  height: 50px;
+  opacity: 0.5;
+} */
+/* #c51ea9 */

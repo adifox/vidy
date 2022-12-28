@@ -17,6 +17,7 @@
   padding: 0 20px;
   border-top-left-radius: 20px;
   background-color: #fff;
+  justify-content: space-between;
 }
 .navBar {
   display: flex;
@@ -32,7 +33,8 @@
 }
 .contentContainer {
   min-height: 100vh;
-  padding: 80px 20px 30px 20px;
+  padding-top: 64px;
+  /* padding: 80px 20px 30px 20px; */
   background-color: #eeeeee;
   margin-left: 76px;
 }
@@ -57,6 +59,8 @@
   margin: 0;
 }
 .newProjectButton {
+  font-size: 14px;
+  padding: 8px 16px;
   border: 1px solid #42a476;
   color: #42a476;
   background-color: #fff;
@@ -68,4 +72,27 @@
 .newProjectButton:hover {
   color: #fff;
   background-color: #42a476;
+}
+.videoButton,
+.audioButton,
+.videoScreenShareButton {
+  font-size: 14px;
+  padding: 8px 16px;
+  border: 1px solid #3a95c9;
+  color: #3a95c9;
+  transition: all 0.3s;
+  margin-left: 16px;
+}
+.videoButton:hover,
+.audioButton:hover,
+.videoScreenShareButton:hover {
+  /* background-color: rgb(45, 120, 164); */
+  color: #fff;
+  background-color: #3a95c9;
+}
+
+.videoButton:active,
+.audioButton:active,
+.videoScreenShareButton:active {
+  transform: scale(0.98);
 }

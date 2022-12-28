@@ -1,32 +1,45 @@
 .wrapperStyles {
   display: flex;
   flex-direction: column;
-  border-left: 50px solid red;
+  max-width: 250px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 4px #0003;
   background-color: #fff;
+  padding: 24px;
 }
 .cardHeader {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  padding: 4px 4px 4px 16px;
-  box-shadow: 0 1px 2px #0003;
+  border-bottom: 1px solid rgba(176, 176, 176, 0.2);
   color: #0009;
+  padding-bottom: 8px;
 }
 .cardHeader h4 {
   margin: 0;
+  margin-bottom: 8px;
+}
+.iconWrapperStyles {
+  display: flex;
+}
+.iconWrapperStyles p {
+  margin-bottom: 8px;
+  margin-left: 16px;
+  font-size: 14px;
+  color: rgb(128, 128, 128);
+}
+.iconPositioningStyles {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .cardBodyStyles {
   display: flex;
   flex-direction: column;
+  padding-top: 16px;
 }
-.cardContent {
-  display: flex;
-  min-height: 80px;
-}
-.cardFooterStyles {
-  display: flex;
-  padding: 4px 4px 4px 16px;
-  background-color: #efefef;
+.avatarHeaderStyles {
+  font-size: 14px;
+  color: #0009;
+  padding-bottom: 8px;
 }
