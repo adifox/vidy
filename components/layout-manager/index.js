@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 // Components
 import Head from 'next/head'
 import { MainContainer } from '../main-container'
-import { DashboardWrapper } from '../dashboard-wrapper'
+import { DashboardFrame } from '../dashboard-frame'
 
 export const LayoutManager = ({ children }) => {
   const router = useRouter()
@@ -35,7 +35,7 @@ export const LayoutManager = ({ children }) => {
       pageTitle = 'About Vidylink'
       break
     default:
-      content = <DashboardWrapper>{children}</DashboardWrapper>
+      content = <DashboardFrame>{children}</DashboardFrame>
       break
   }
 

@@ -22,9 +22,13 @@ export const ProjectsContainer = ({ projects }) => {
           />
         ) : (
           projects.map(({ projectName, selectBorder }, index) => (
-            <div key={index} className={cardWrapperStyles}>
-              <ProjectCard projectName={projectName} color={selectBorder} />
-            </div>
+            <ProjectCard
+              key={index}
+              projectName={projectName}
+              color={selectBorder}
+            />
+            // <div className={cardWrapperStyles}>
+            // </div>
           ))
         )}
       </div>

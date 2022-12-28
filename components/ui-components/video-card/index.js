@@ -33,9 +33,38 @@ export const VideoCard = ({ children, mediaName, description }) => {
           src='/Images/video-call.jpg'
           alt='Vidy Logo'
           layout='fill'
+          objectFit='cover'
           placeholder='blur'
           className={image}
         />
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '8px',
+            left: '8px',
+            padding: '4px 8px',
+            borderRadius: '16px',
+            // backgroundColor: 'rgba(153, 213, 250, 90%)',
+            backgroundColor: 'rgba(153, 213, 250)',
+            fontSize: '12px',
+          }}
+        >
+          04:31
+        </div>
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '8px',
+            right: '8px',
+            // backgroundColor: 'rgba(153, 213, 250, 30%)',
+            backgroundColor: 'rgba(153, 213, 250)',
+            padding: '4px 8px',
+            borderRadius: '50px',
+            fontSize: '12px',
+          }}
+        >
+          28 Jan 2022
+        </div>
       </div>
       <div className={cardBodyStyles}>
         <div className={cardContent}>
@@ -45,7 +74,7 @@ export const VideoCard = ({ children, mediaName, description }) => {
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignContent: 'center',
-                marginBottom: '6px',
+                marginBottom: '8px',
               }}
             >
               <h3
@@ -58,7 +87,7 @@ export const VideoCard = ({ children, mediaName, description }) => {
               >
                 {mediaName}
               </h3>
-              <div
+              {/* <div
                 style={{
                   padding: '4px 8px',
                   borderRadius: '16px',
@@ -67,13 +96,13 @@ export const VideoCard = ({ children, mediaName, description }) => {
                 }}
               >
                 04:31
-              </div>
+              </div> */}
             </div>
             <p
               style={{
                 fontSize: '12px',
                 fontWeight: '500',
-                lineHeight: '20px',
+                lineHeight: '16px',
                 color: 'rgb(29, 44, 60)',
               }}
             >
@@ -83,7 +112,7 @@ export const VideoCard = ({ children, mediaName, description }) => {
         </div>
         <div className={lowerContent}>
           <div className={avatarWrapper}>
-            <div style={{ display: 'flex' }}>
+            {/* <div style={{ display: 'flex' }}>
               <div
                 style={{
                   backgroundColor: 'rgba(153, 213, 250, 30%)',
@@ -94,8 +123,8 @@ export const VideoCard = ({ children, mediaName, description }) => {
               >
                 28 Jan 2022
               </div>
-              {/* <div style={{ width: '16px' }} /> */}
-            </div>
+            </div> */}
+            {/* <div style={{ width: '16px' }} /> */}
             <div style={{ display: 'flex' }}>
               {users.map(({ user }, i) => (
                 <Avatar key={i} user={user} i={i} />

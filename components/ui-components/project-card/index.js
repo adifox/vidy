@@ -24,10 +24,6 @@ export const ProjectCard = ({
   color,
   mediaContent,
 }) => {
-  projectName = 'App Development'
-  teamName = 'Vidylink'
-  creationDate = '28, Dec 2022'
-  mediaContent = 4
   return (
     <div className={wrapperStyles}>
       <div className={colorBadgeStyles} style={{ backgroundColor: color }} />
@@ -43,13 +39,13 @@ export const ProjectCard = ({
           <span className={iconPositioningStyles}>
             <FontAwesomeIcon icon={faClock} />
           </span>
-          <p>{creationDate}</p>
+          <p>{creationDate || '01, Jan 2022'}</p>
         </span>
         <span className={iconWrapperStyles}>
           <span className={iconPositioningStyles}>
             <FontAwesomeIcon icon={faFileVideo} />
           </span>
-          <p>{mediaContent}</p>
+          <p>{mediaContent || 0}</p>
         </span>
       </div>
       <div className={cardBodyStyles}>

@@ -11,7 +11,7 @@ import { Modal } from '../ui-components/modal'
 import { ProjectForm } from '../ui-components/proyect-form'
 
 // Styles
-import styles from './DashboardWrapper.module.css'
+import styles from './DashboardFrame.module.css'
 const {
   header,
   headerContainer,
@@ -24,7 +24,7 @@ const {
   audioButton,
 } = styles
 
-export const DashboardWrapper = ({ children }) => {
+export const DashboardFrame = ({ children }) => {
   const [openModal, setOpenModal] = useState(false)
   const [createdProjects, setCreatedProjects] = useState([])
 
