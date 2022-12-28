@@ -1,12 +1,22 @@
 .wrapperStyles {
+  position: relative;
   display: flex;
   flex-direction: column;
   max-width: 250px;
   border-radius: 10px;
-  overflow: hidden;
+  /* overflow: hidden; */
   box-shadow: 0 2px 4px #0003;
   background-color: #fff;
   padding: 24px;
+}
+.colorBadgeStyles {
+  position: absolute;
+  width: 32px;
+  height: 70px;
+  background-color: #ea5a92;
+  right: 16px;
+  top: -12px;
+  border-radius: 16px;
 }
 .cardHeader {
   border-bottom: 1px solid rgba(176, 176, 176, 0.2);
@@ -43,3 +53,14 @@
   color: #0009;
   padding-bottom: 8px;
 }
+
+/* 
+Color theme for Badges:
+#ea5a92
+#10C2A3
+#5096F7
+#FA8036
+#D38AE3
+#7EBCE3
+
+background: #F1F3F6 */

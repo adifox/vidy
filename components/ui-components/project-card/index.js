@@ -7,6 +7,7 @@ import { Avatar } from '../avatar'
 // Styles
 import {
   wrapperStyles,
+  colorBadgeStyles,
   cardHeader,
   cardBodyStyles,
   iconWrapperStyles,
@@ -28,7 +29,8 @@ export const ProjectCard = ({
   creationDate = '28, Dec 2022'
   mediaContent = 4
   return (
-    <div className={wrapperStyles} style={{ borderLeftColor: color }}>
+    <div className={wrapperStyles}>
+      <div className={colorBadgeStyles} style={{ backgroundColor: color }} />
       <div className={cardHeader}>
         <h4>{projectName}</h4>
         <span className={iconWrapperStyles}>
