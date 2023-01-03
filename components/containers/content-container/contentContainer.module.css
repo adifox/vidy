@@ -1,4 +1,4 @@
-.videoCardsContainer {
+.contentMainWrapperStyles {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -35,7 +35,24 @@
   opacity: 1;
   color: #fff;
 }
+.bodyContent {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
 .bodyContent h3 {
   font-size: 24px;
   color: #07080a;
+}
+.rightAreaStyles {
+  display: flex;
+  flex-direction: column;
+}
+.feedTableStyles,
+.connectionsStyles {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px #0003;
+  padding: 16px;
+  margin-bottom: 24px;
 }

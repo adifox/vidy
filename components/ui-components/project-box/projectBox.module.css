@@ -1,0 +1,58 @@
+.projectBoxMainStyles {
+  max-height: 350px;
+  overflow: scroll;
+}
+.headerStyles {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.addProjectStyles {
+  color: #717171;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+.tableHeaderStyles,
+.tableBodyStyles {
+  width: 100%;
+  font-size: 14px;
+  color: #717171;
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.5fr 0.5fr;
+}
+.tableBodyStyles {
+  border-bottom: 1px solid #d3d0d0;
+}
+.projectColorStyles {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.projectDetailStyles {
+  font-size: 14px;
+  padding: 16px 0px;
+}
+.projectDetailStyles td {
+  padding: 16px 0px;
+}
+.projectNameStyles,
+.projectDateStyles {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 0px;
+}
+.avatarWrapperStyles {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 0px 8px 4px;
+}
+.projectFilesStyles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0px;
+}

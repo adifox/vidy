@@ -7,6 +7,7 @@
   top: 0;
   right: 0;
   box-shadow: 0px 0px 2px rgb(0 0 0 / 20%);
+  z-index: 100;
 }
 .headerContainer {
   display: flex;
@@ -30,6 +31,7 @@
   height: 100%;
   padding: 20px 0;
   background-color: #1c2637;
+  z-index: 101;
 }
 .contentContainer {
   min-height: 100vh;
