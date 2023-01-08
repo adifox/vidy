@@ -17,7 +17,7 @@ import {
   rightAreaStyles,
 } from './contentContainer.module.css'
 
-export const ContentContainer = ({ children, sideBoard }) => {
+export const ContentContainer = ({ children }) => {
   return (
     <>
       <div className={contentMainWrapperStyles}>
@@ -50,16 +50,6 @@ export const ContentContainer = ({ children, sideBoard }) => {
           </div>
         </div>
       </div>
-      {/* <div className={rightSideBar}>
-        {!sideBoard ? (
-          <EmptyAreaInfo
-            icon={faUserAltSlash}
-            text='Your personal data is empty.'
-          />
-        ) : (
-          sideBoard
-        )}
-      </div> */}
     </>
   )
 }

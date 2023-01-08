@@ -1,25 +1,113 @@
 .mediaContainerHeaderStyles {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 192px;
-  padding: 0px 26px 0 48px;
+  padding: 16px 0px;
   background-image: linear-gradient(to bottom right, #42a476, #3a95c9);
 }
-.videoCardsContainer {
+.userAreaStyles {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 1440px;
+  height: 100%;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 0 24px;
+}
+.userAccountStyles {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 10px;
+}
+.avatarWrapper {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.userDetailStyles {
+  display: flex;
+  flex-direction: column;
+  margin-left: 24px;
+}
+.userNameStyles {
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 24px;
+  margin-bottom: 16px;
+}
+.userMailStyles {
+  font-size: 14px;
+  line-height: 16px;
+  color: #717171;
+}
+.userAccountStatusStyles {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+}
+.additionalDataBoxStyles {
+  display: flex;
+}
+.premiumButtonStyles {
+  background-image: linear-gradient(to bottom right, #42a476, #3a95c9);
+}
+.premiumButtonStyles:active {
+  transform: scale(0.98);
+}
+.mediaCardsContainer {
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 16px;
+}
+.selectorsContainerStyles {
+  display: flex;
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 16px;
+}
+.mediaContentStyles {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 24px;
-  max-width: 1440px;
-  margin: 0 auto;
-  /* flex-wrap: wrap; */
-  /* display: grid; */
-  /* grid-template-rows: 1fr; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* flex-direction: column; */
-  /* background-color: #fff; */
-  /* border-radius: 5px; */
-  /* box-shadow: 0 2px 4px #0003; */
-  padding: 24px;
+}
+.mediaSelectorStyles {
+  color: #717171;
+  padding: 8px 16px;
+  margin-right: 16px;
+  font-size: 14px;
+  box-shadow: 0 2px 4px #0003;
+  transition: all 0.3s;
+}
+.mediaSelectorStyles:active {
+  transform: scale(0.98);
+}
+.active {
+  color: #3a95c9;
+}
+@media (max-width: 1440px) {
+  .mediaContainerHeaderStyles {
+    padding: 24px;
+    height: 160px;
+  }
+  .mediaContentStyles {
+    grid-template-columns: 1fr 1fr;
+  }
+  .mediaCardsContainer,
+  .selectorsContainerStyles {
+    padding: 0 24px;
+  }
+  .avatarWrapper {
+    width: 80px;
+    height: 80px;
+  }
 }
 /* .videoCardsContainer p {
   color: #808080;

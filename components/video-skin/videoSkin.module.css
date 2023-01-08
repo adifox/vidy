@@ -9,6 +9,7 @@
   border-radius: 10px;
   overflow: hidden;
   border: 5px solid rgba(58, 149, 201, 1);
+  box-shadow: 0 2px 4px #0003;
 }
 .controlAreaStyles {
   position: relative;
@@ -22,6 +23,7 @@
   border-radius: 10px;
   background-color: #1c2637;
   color: #fff;
+  box-shadow: 0 2px 4px #0003;
 }
 .playerStatusArea {
   display: flex;

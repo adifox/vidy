@@ -22,7 +22,7 @@
   grid-template-columns: 2fr 1.5fr 1.5fr 0.5fr;
 }
 .tableBodyStyles {
-  border-bottom: 1px solid #d3d0d0;
+  border-bottom: 1px solid #efefef;
 }
 .projectColorStyles {
   width: 24px;

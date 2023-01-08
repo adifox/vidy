@@ -4,11 +4,7 @@ import { MediaContainer } from '../../components/containers/media-container'
 
 export default function Page({ media }) {
   console.log('the media files:', media)
-  return (
-    <div>
-      <MediaContainer />
-    </div>
-  )
+  return <MediaContainer />
 }
 
 const getMediaFiles = async () => {

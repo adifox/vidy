@@ -4,7 +4,8 @@
   padding: 40px;
   width: 100vw;
   height: 100vh;
-  background-color: #1c2637;
+  /* background-color: #1c2637; */
+  background-image: linear-gradient(to bottom right, #42a476, #3a95c9);
 }
 
 .videoskinWrapper {
