@@ -31,7 +31,9 @@ export const VideoSkin = ({ onClick, recordOptions, audio }) => {
   const [mediaFile, setMediaFile] = useState(null)
   const [fileName, setFileName] = useState()
   const [fileUploaded, setFileUploaded] = useState(false)
-  const [playerStatus, setPlayerStatus] = useState('Are you ready to record?')
+  const [playerStatus, setPlayerStatus] = useState(
+    'To activate the device click the icon.'
+  )
   const playerRef = useRef(null)
 
   const VideoJsOptions = {

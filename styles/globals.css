@@ -72,6 +72,9 @@ ol {
 .vjs-duration {
   display: inline-block !important;
 }
+.vjs-record .vjs-device-button.vjs-control {
+  box-shadow: 0 0 1em rgb(59 150 199) !important;
+}
 
 /* .vjs-current-time,
 .vjs-time-divider,
